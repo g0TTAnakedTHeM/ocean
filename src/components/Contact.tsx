@@ -1,7 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, User } from 'lucide-react';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      messengerPhone: formData.get('messengerPhone'),
+      messenger: formData.get('messenger'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      const formDataToSend = new URLSearchParams();
+      formDataToSend.append('name', data.name as string);
+      formDataToSend.append('messengerPhone', data.messengerPhone as string);
+      formDataToSend.append('messenger', data.messenger as string);
+      formDataToSend.append('email', (data.email as string) || '');
+      formDataToSend.append('message', (data.message as string) || '');
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwAhJjHEjBM6i48k0BDH7gGaf7fktEzFrfHW296sUd2s-O5npfwxgJ965Za6yvqnzvA/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formDataToSend
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        setSubmitStatus('success');
+        if (e.currentTarget) {
+          e.currentTarget.reset();
+        }
+        alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
+      } else {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+      alert('Помилка при відправці форми. Будь ласка, спробуйте ще раз або зв\'яжіться з нами через месенджер. Помилка: ' + (error instanceof Error ? error.message : 'Невідома помилка'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="apple-section bg-white">
       <div className="apple-container max-w-3xl">
@@ -38,7 +95,12 @@ const Contact = () => {
         </div>
 
         <div className="apple-card p-8 fade-in-section">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <input 
+              type="hidden" 
+              name="access_key" 
+              value="YOUR-ACCESS-KEY-HERE"
+            />
             <div className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-apple-gray-800 mb-2">
@@ -130,12 +192,17 @@ const Contact = () => {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
-            >
-              Відправити заявку
-            </button>
+            <div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
+                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Відправляємо...' : 'Відправити'}
+              </button>
+            </div>
           </form>
         </div>
       </div>

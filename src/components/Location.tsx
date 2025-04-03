@@ -166,7 +166,7 @@ const Location = () => {
             </div>
             <div className="apple-card p-6 text-center hover:scale-105 transition-transform duration-300">
               <img 
-                src="/assets/images/optimized/IMG_2830 2-desktop.jpg" 
+                src="/assets/images/optimized/hotel3 2-desktop.jpg" 
                 alt="Готель та інфраструктура" 
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />

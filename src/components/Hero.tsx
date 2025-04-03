@@ -24,14 +24,9 @@ const Hero = () => {
           muted 
           loop 
           playsInline
-          className="absolute min-w-full min-h-full object-cover scale-[1.02]"
-          poster="/assets/images/placeholder.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <source 
-            src="/assets/videos/hero_compressed.mp4" 
-            type="video/mp4" 
-          />
-          Your browser does not support the video tag.
+          <source src="/assets/videos/hero_compressed_g.mp4" type="video/mp4" />
         </video>
       </div>
       

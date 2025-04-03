@@ -39,9 +39,11 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img 
-                src={isScrolled ? "/assets/logo/oceantherapy-logo-options.pdf.png" : "/assets/logo/oceantherapy-logo-option-white.png"} 
+                src={isScrolled ? "/assets/logo/oceantherapy-logo-options.pdf.png" : "/assets/logo/oceantherapy-logo-option-white.png"}
                 alt="OCEANTHERAPY Logo"
-                className="h-8 md:h-9 transition-all duration-300"
+                className={`h-8 md:h-9 transition-all duration-300 ${
+                  isScrolled ? '[filter:invert(31%)_sepia(98%)_saturate(1234%)_hue-rotate(211deg)_brightness(97%)_contrast(105%)]' : ''
+                }`}
               />
             </Link>
           </div>
