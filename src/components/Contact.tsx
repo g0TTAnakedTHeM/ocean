@@ -59,6 +59,36 @@ const Contact = () => {
     }
   };
 
+  const handleMessengerClick = (messenger: string) => {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    if (!form) return;
+    
+    const formData = new FormData(form);
+    const phoneNumber = (formData.get('messengerPhone') as string)?.replace(/\D/g, '') || '';
+    let url = '';
+    
+    switch (messenger) {
+      case 'whatsapp':
+        url = `https://wa.me/${phoneNumber}`;
+        break;
+      case 'telegram':
+        // Check if it's a username (starts with @) or phone number
+        if (phoneNumber.startsWith('@')) {
+          url = `https://t.me/${phoneNumber.substring(1)}`;
+        } else {
+          url = `https://t.me/${phoneNumber}`;
+        }
+        break;
+      case 'viber':
+        url = `viber://chat?number=${phoneNumber}`;
+        break;
+    }
+    
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };
+
   return (
     <section id="contact" className="apple-section bg-white">
       <div className="apple-container max-w-3xl">
@@ -70,7 +100,7 @@ const Contact = () => {
           
           <div className="flex justify-center gap-4 mt-8">
             <a
-              href="https://t.me/your_telegram"
+              href="https://t.me/kshisya13"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#0088cc] hover:bg-[#0077b3] text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
@@ -81,7 +111,7 @@ const Contact = () => {
               Telegram
             </a>
             <a
-              href="https://wa.me/your_whatsapp"
+              href="https://wa.me/380679339332"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#25D366] hover:bg-[#22c55e] text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
