@@ -25,7 +25,7 @@ const Pricing = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Individual pricing card */}
-          <div className="bg-white p-8 rounded-xl shadow-md fade-in-section hover:translate-y-[-4px] transition-all duration-300">
+          <div className="bg-white p-8 rounded-xl shadow-md fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
             <div className="text-center">
               <h3 className="text-2xl font-medium text-gray-900 mb-2">Індивідуальна участь</h3>
               <div className="mt-4 flex items-center justify-center">
@@ -40,7 +40,7 @@ const Pricing = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+                className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
               >
                 Забронювати місце
               </a>
@@ -60,7 +60,7 @@ const Pricing = () => {
           </div>
           
           {/* Group pricing card */}
-          <div className="bg-white p-8 border border-gray-200 relative fade-in-section hover:translate-y-[-4px] transition-all duration-300">
+          <div className="bg-white p-8 rounded-xl shadow-md relative fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
             <div className="absolute top-2 right-4 z-10">
               <div className="flex items-center gap-1 bg-blue-600 text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-lg">
                 <Star className="w-3.5 h-3.5 fill-white" />
@@ -82,7 +82,7 @@ const Pricing = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+                className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
               >
                 Забронювати місця
               </a>
@@ -100,6 +100,12 @@ const Pricing = () => {
               </ul>
             </div>
           </div>
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Від вас потрібно тільки придбати квиток і приїхати. Далі ми вас зустрінемо і все організуємо
+          </p>
         </div>
       </div>
     </section>

@@ -1,216 +1,146 @@
-import React, { useState } from 'react';
-import { MessageSquare, Send, Phone, Mail, Instagram, Facebook } from 'lucide-react';
-import Divider from './ui/Divider';
+import React from 'react';
+import { Mail, Phone, User } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setFormSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 5000);
-    }, 1500);
-  };
-
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white relative">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 fade-in-section">
-          <h2 className="ocean-title">Є запитання?</h2>
-          <Divider />
-          <p className="ocean-text max-w-3xl mx-auto">
-            Зв'яжіться з нами, щоб дізнатися більше про ретріт, забронювати місце або задати будь-які питання.
+    <section id="contact" className="apple-section bg-white">
+      <div className="apple-container max-w-3xl">
+        <div className="text-center mb-12 fade-in-section">
+          <h2 className="apple-title">Заповни форму та я з тобою зв'яжусь</h2>
+          <p className="apple-subtitle">
+            Залишай заявку на попереднє бронювання, щоб не втратити своє місце!
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact information */}
-          <div className="fade-in-section">
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 p-8 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-medium text-ocean-700 mb-6">Контактна інформація</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-center hover:translate-x-1 transition-all duration-300">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-ocean-50 flex items-center justify-center text-ocean-600 mr-4">
-                    <Phone className="h-5 w-5 stroke-1" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">Telegram / WhatsApp</p>
-                    <p className="text-lg font-medium text-gray-800">+38 067 933 9332</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center hover:translate-x-1 transition-all duration-300">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-ocean-50 flex items-center justify-center text-ocean-600 mr-4">
-                    <MessageSquare className="h-5 w-5 stroke-1" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">Telegram</p>
-                    <p className="text-lg font-medium text-gray-800">@kshisya13</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center hover:translate-x-1 transition-all duration-300">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-ocean-50 flex items-center justify-center text-ocean-600 mr-4">
-                    <Mail className="h-5 w-5 stroke-1" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">Email</p>
-                    <p className="text-lg font-medium text-gray-800">info@oceantherapy.com</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-10 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-medium text-gray-800 mb-4">Ми в соціальних мережах</h4>
-                <div className="flex space-x-4">
-                  <a 
-                    href="https://instagram.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center text-white hover:shadow-md transition-all duration-300 hover:scale-110"
-                  >
-                    <Instagram className="h-6 w-6" />
-                  </a>
-                  <a 
-                    href="https://facebook.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white hover:shadow-md transition-all duration-300 hover:scale-110"
-                  >
-                    <Facebook className="h-6 w-6" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
           
-          {/* Contact form */}
-          <div className="fade-in-section">
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 p-8 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-medium text-ocean-700 mb-6">Надіслати повідомлення</h3>
-              
-              {formSubmitted ? (
-                <div className="bg-green-50 p-8 rounded-lg text-center animate-scale-in">
-                  <div className="h-16 w-16 mx-auto text-green-500 mb-4 flex items-center justify-center bg-green-100 rounded-full">
-                    <Check className="h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-green-800 mb-2">Дякуємо за повідомлення!</h4>
-                  <p className="text-green-700">Ми зв'яжемося з вами якнайшвидше.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Ім'я
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-ocean-600 focus:border-ocean-600 transition-colors shadow-sm"
-                      placeholder="Ваше ім'я"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-ocean-600 focus:border-ocean-600 transition-colors shadow-sm"
-                      placeholder="ваш@email.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Повідомлення
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-ocean-600 focus:border-ocean-600 transition-colors shadow-sm"
-                      placeholder="Ваше повідомлення..."
-                    />
-                  </div>
-                  
-                  <div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={`w-full flex items-center justify-center px-6 py-3 rounded-md text-white bg-ocean-700 hover:bg-ocean-800 focus:outline-none focus:ring-2 focus:ring-ocean-600 focus:ring-offset-2 transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg ${
-                        isSubmitting ? 'opacity-80 cursor-not-allowed' : ''
-                      }`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Надсилання...
-                        </>
-                      ) : (
-                        <>
-                          Написати нам
-                          <Send className="ml-2 h-4 w-4" />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </form>
-              )}
-            </div>
+          <div className="flex justify-center gap-4 mt-8">
+            <a
+              href="https://t.me/your_telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#0088cc] hover:bg-[#0077b3] text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.52.36-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.89.03-.24.37-.49 1.02-.75 4.02-1.75 6.69-2.9 8.03-3.46 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.14-.02.3-.03.42z"/>
+              </svg>
+              Telegram
+            </a>
+            <a
+              href="https://wa.me/your_whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#25D366] hover:bg-[#22c55e] text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.287.129.332.202.045.073.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 19.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+              </svg>
+              WhatsApp
+            </a>
           </div>
+        </div>
+
+        <div className="apple-card p-8 fade-in-section">
+          <form className="space-y-6">
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-apple-gray-800 mb-2">
+                  Ім'я та прізвище
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <User className="h-5 w-5 text-apple-gray-400" />
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="block w-full pl-10 pr-4 py-3 border border-apple-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    placeholder="Введіть ваше ім'я"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-apple-gray-800 mb-2">
+                  Email (необов'язково)
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Mail className="h-5 w-5 text-apple-gray-400" />
+                  </div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    className="block w-full pl-10 pr-4 py-3 border border-apple-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="messenger" className="block text-sm font-medium text-apple-gray-800 mb-2">
+                  В якому месенджері з вами зв'язатись?
+                </label>
+                <select
+                  id="messenger"
+                  name="messenger"
+                  required
+                  className="block w-full pl-4 pr-10 py-3 border border-apple-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none bg-white"
+                >
+                  <option value="">Оберіть месенджер</option>
+                  <option value="telegram">Telegram</option>
+                  <option value="whatsapp">WhatsApp</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="messengerPhone" className="block text-sm font-medium text-apple-gray-800 mb-2">
+                  На якому номері телефону ваш месенджер?
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Phone className="h-5 w-5 text-apple-gray-400" />
+                  </div>
+                  <input
+                    type="tel"
+                    id="messengerPhone"
+                    name="messengerPhone"
+                    required
+                    pattern="[+]?[0-9]{10,15}"
+                    className="block w-full pl-10 pr-4 py-3 border border-apple-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    placeholder="+380 або +1234567890"
+                  />
+                </div>
+                <p className="mt-1 text-sm text-gray-500">
+                  Введіть номер у міжнародному форматі: +380XXXXXXXXX або +1234567890
+                </p>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-apple-gray-800 mb-2">
+                  Коментар (необов'язково)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="block w-full px-4 py-3 border border-apple-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  placeholder="Додаткова інформація або побажання..."
+                ></textarea>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-sm hover:shadow-md"
+            >
+              Відправити заявку
+            </button>
+          </form>
         </div>
       </div>
     </section>
   );
 };
-
-// Missing import for Check
-import { Check } from 'lucide-react';
 
 export default Contact;

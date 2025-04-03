@@ -28,7 +28,7 @@ const Hero = () => {
           poster="/assets/images/placeholder.jpg"
         >
           <source 
-            src="/assets/videos/IMG_1699.mp4" 
+            src="/assets/videos/hero_compressed.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
@@ -55,7 +55,7 @@ const Hero = () => {
 
         {/* Primary CTA */}
         <a 
-          href="#about" 
+          href="#contact" 
           className="bg-blue-800 hover:bg-blue-700 group ripple-btn text-lg px-8 py-4 text-white font-medium rounded-full inline-flex items-center transition-all duration-300 shadow-lg"
           style={{
             animation: isLoaded ? 'fadeIn 0.8s ease-out 0.6s both' : 'none'

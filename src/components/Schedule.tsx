@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Sun, Coffee, Waves, Utensils, Activity, Music, Bike, Camera, Heart, MapPin, Leaf } from 'lucide-react';
 
 const Schedule = () => {
-  const [activeDay, setActiveDay] = useState(2);
+  const [activeDay, setActiveDay] = useState(1);
 
   const days = [
     {
@@ -111,13 +111,13 @@ const Schedule = () => {
         </div>
         
         {/* Day tabs */}
-        <div className="flex justify-center space-x-3 mb-12 pb-2 fade-in-section">
+        <div className="flex justify-center space-x-3 mb-12 pb-2 fade-in-section bg-gray-100/80 py-3 px-6 rounded-full w-fit mx-auto shadow-sm">
           <button
             onClick={() => setActiveDay(1)}
             className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
               activeDay === 1
                 ? 'bg-apple-blue text-white shadow-apple-md shadow-apple-blue/20'
-                : 'bg-apple-gray-50 text-apple-gray-800 hover:bg-apple-gray-100'
+                : 'bg-white text-apple-gray-800 hover:bg-apple-gray-50'
             }`}
           >
             День 1
@@ -150,7 +150,7 @@ const Schedule = () => {
             .filter((day) => day.day === activeDay)
             .map((day) => (
               <div key={day.day} className="space-y-10">
-                <h3 className="apple-headline">{day.title}</h3>
+                <h3 className="apple-headline">Програма {day.title}</h3>
                 
                 {/* Timeline */}
                 <div className="space-y-6">

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import Divider from './ui/Divider';
 import { GradientText } from './ui/GradientText';
 
@@ -123,6 +123,17 @@ const About = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-16 fade-in-section">
+          <a
+            href="tel:+380991234567"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg"
+          >
+            <Phone className="w-5 h-5" />
+            Вирішилися? Зателефонуйте нам!
+          </a>
         </div>
       </div>
     </section>
