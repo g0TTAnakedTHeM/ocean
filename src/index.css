@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+
+    --primary: 212 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 81% 67%;
+    --secondary-foreground: 0 0% 11%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 11%;
+
+    --destructive: 0 77% 59%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 212 100% 40%;
+
+    --radius: 0.75rem;
+
+    --color-1: 330 100% 40%;
+
+    --color-2: 140 100% 55%;
+
+    --color-3: 210 100% 30%;
+
+    --color-4: 60 100% 70%;
+
+    --color-5: 295 100% 45%;
+
+    --brand: 50 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-[#1d1d1f] font-sans antialiased;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  .dark {
+    --color-1: 330 100% 40%;
+    --color-2: 140 100% 55%;
+    --color-3: 210 100% 30%;
+    --color-4: 60 100% 70%;
+    --color-5: 295 100% 45%;
+    --brand: 50 100% 50%;
+  }
+}
+
+@layer components {
+  /* Apple-style components */
+  .apple-section {
+    @apply py-20 md:py-28 lg:py-36 overflow-hidden;
+  }
+
+  .apple-container {
+    @apply max-w-5xl mx-auto px-6 sm:px-8 lg:px-10;
+  }
+
+  .apple-title {
+    @apply font-display font-semibold text-4xl md:text-5xl lg:text-6xl tracking-tight text-apple-gray-800 mb-6;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .apple-subtitle {
+    @apply font-sans text-xl md:text-2xl text-apple-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed;
+    letter-spacing: -0.01em;
+  }
+
+  .apple-text {
+    @apply font-sans text-base md:text-lg lg:text-xl text-apple-gray-500 leading-relaxed max-w-3xl mx-auto;
+    letter-spacing: -0.01em;
+  }
+
+  .apple-headline {
+    @apply font-display font-semibold text-2xl md:text-3xl tracking-tight text-apple-gray-800 mb-4;
+    letter-spacing: -0.02em;
+  }
+
+  .apple-caption {
+    @apply font-sans text-sm text-apple-gray-400;
+    letter-spacing: -0.01em;
+  }
+
+  .apple-card {
+    @apply bg-white rounded-2xl shadow-sm transition-all duration-300 ease-out overflow-hidden border border-apple-gray-100;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .apple-btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-apple-blue px-7 py-3 text-base font-medium text-white shadow-sm hover:bg-apple-blue-light focus:outline-none transition-all duration-300;
+  }
+
+  .apple-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full bg-apple-gray-50 px-7 py-3 text-base font-medium text-apple-gray-800 shadow-sm border border-apple-gray-200 hover:bg-apple-gray-100 focus:outline-none transition-all duration-300;
+  }
+
+  .apple-divider {
+    @apply h-[1px] w-16 bg-gradient-to-r from-apple-blue via-apple-highlight to-apple-blue mx-auto my-8;
+  }
+
+  /* Refine fade-in animations to match Apple's subtle style */
+  .fade-in-section {
+    @apply opacity-0 translate-y-5 transition-all duration-500 ease-out;
+  }
+
+  .fade-in-section.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Timeline styling with Apple's aesthetics */
+  .apple-timeline-item {
+    @apply relative pb-10 last:pb-0;
+  }
+  
+  .apple-timeline-time {
+    @apply text-sm text-apple-blue font-medium mb-2;
+  }
+  
+  .apple-timeline-title {
+    @apply text-xl font-medium text-apple-gray-800 mb-2 transition-colors duration-300;
+  }
+  
+  .apple-timeline-description {
+    @apply text-apple-gray-500 leading-relaxed;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Apple-style cards with subtle hover effect */
+  .apple-hover-card {
+    @apply transition-all duration-300 ease-out transform hover:scale-[1.02] hover:shadow-apple-lg;
+  }
+  
+  /* Glassmorphism for Apple-style UI */
+  .apple-glass {
+    @apply backdrop-blur-xl bg-white/80 rounded-2xl shadow-apple-md border border-white/20;
+  }
+}
+
+/* Apple-style smooth gradient animations */
+.apple-bg-animate {
+  background: linear-gradient(-45deg, #0066cc, #5ac8fa, #f5f5f7, #0066cc);
+  background-size: 400% 400%;
+  animation: appleGradient 15s ease infinite;
+}
+
+@keyframes appleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apple-style lazy loading image effect */
+.apple-lazy-image {
+  transition: filter 0.8s ease-out, transform 0.8s ease-out;
+  filter: blur(20px);
+  transform: scale(1.05);
+}
+
+.apple-lazy-image.loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* Apple-style parallax effect */
+.apple-parallax {
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@keyframes appleAppear {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes appleEntrance {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apple-style grid layouts */
+.apple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Apple's typical button ripple effect */
+.apple-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-ripple::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.8s;
+}
+
+.apple-ripple:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* Ripple button effect */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.8s;
+}
+
+.ripple-btn:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

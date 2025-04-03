@@ -1,0 +1,126 @@
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.image-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.image-slider::before,
+.image-slider::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.image-slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.image-slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  width: 200%;
+  padding: 0 1rem;
+}
+
+.slide-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.slide-row.top {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.slide-row.bottom {
+  animation: scrollRight 40s linear infinite;
+}
+
+.slide {
+  flex: 0 0 360px;
+  min-width: 300px;
+  pointer-events: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  pointer-events: none;
+}
+
+/* Ensure first 4 slides are in first row */
+.slide:nth-child(-n+4) {
+  grid-row: 1;
+}
+
+/* Ensure next 4 slides are in second row */
+.slide:nth-child(n+5):nth-child(-n+8) {
+  grid-row: 2;
+}
+
+/* Repeat for the second set */
+.slide:nth-child(n+9):nth-child(-n+12) {
+  grid-row: 1;
+}
+
+.slide:nth-child(n+13) {
+  grid-row: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 288px;
+    min-width: 260px;
+  }
+  
+  .slide-track {
+    gap: 0.7rem;
+  }
+  
+  .slide-row {
+    gap: 0.7rem;
+  }
+  
+  .slide-row.top {
+    animation: scrollLeft 35s linear infinite;
+  }
+  
+  .slide-row.bottom {
+    animation: scrollRight 35s linear infinite;
+  }
+} 
