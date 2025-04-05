@@ -65,20 +65,6 @@ const Index = () => {
     };
   }, []);
 
-  // Preload critical images for better user experience
-  useEffect(() => {
-    const preloadImages = [
-      'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=2852&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1565073624497-7144b641779a?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1542683305-710078a12f73?q=80&w=2062&auto=format&fit=crop'
-    ];
-    
-    preloadImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-
   return (
     <Layout>
       <Hero />
