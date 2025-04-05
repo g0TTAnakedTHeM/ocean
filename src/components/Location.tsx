@@ -199,7 +199,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.mobile}
-                          srcSet={`${img.mobile} 300w, ${img.desktop} 600w`}
+                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -220,7 +220,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.mobile}
-                          srcSet={`${img.mobile} 300w, ${img.desktop} 600w`}
+                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -248,7 +248,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.desktop}
-                          srcSet={`${img.mobile} 300w, ${img.desktop} 600w`}
+                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -269,7 +269,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.desktop}
-                          srcSet={`${img.mobile} 300w, ${img.desktop} 600w`}
+                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
