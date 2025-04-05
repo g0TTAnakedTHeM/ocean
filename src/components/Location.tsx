@@ -37,6 +37,11 @@ const Location = () => {
     }));
   };
 
+  // URL encode helper function that specifically handles spaces for srcSet
+  const encodeSrcSetUrl = (url: string) => {
+    return url.replace(/ /g, '%20');
+  };
+
   // Optimized image paths with different sizes
   const images = [
     {
@@ -199,7 +204,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.mobile}
-                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
+                          srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -220,7 +225,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.mobile}
-                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
+                          srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -248,7 +253,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.desktop}
-                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
+                          srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
@@ -269,7 +274,7 @@ const Location = () => {
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
                           src={img.desktop}
-                          srcSet={`${encodeURI(img.mobile)} 300w, ${encodeURI(img.desktop)} 600w`}
+                          srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
