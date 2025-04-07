@@ -159,9 +159,9 @@ const Contact = () => {
                     id="phone"
                     name="phone"
                     required
-                    pattern="[+]?[0-9]{10,15}"
+                    pattern="[+]?[0-9]{8,15}"
                     className="block w-full pl-10 pr-4 py-3 border border-ocean-100 rounded-lg focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-200"
-                    placeholder="+380 або +1234567890"
+                    placeholder="+380 або будь-який інший формат"
                   />
                 </div>
               </div>
