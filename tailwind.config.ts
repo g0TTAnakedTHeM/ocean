@@ -24,6 +24,18 @@ export default {
     			ring: 'hsl(var(--ring))',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
+    			ocean: {
+    				'50': '#ebf3f5',
+    				'100': '#c6dcdf',
+    				'200': '#a1c4ca',
+    				'300': '#6397a8',
+    				'400': '#4d8393',
+    				'500': '#376f7f',
+    				'600': '#215b6b',
+    				'700': '#084050',
+    				'800': '#043544',
+    				'900': '#02232d',
+    			},
     			apple: {
     				blue: {
     					light: '#69aeff',
@@ -175,6 +187,8 @@ export default {
     			'apple-gradient-alt': 'linear-gradient(to right, #ff3b30, #ff9f0a)',
     			'apple-light-gradient': 'linear-gradient(to bottom, #ffffff, #f5f5f7)',
     			'apple-dark-gradient': 'linear-gradient(to bottom, #1d1d1f, #000000)',
+    			'ocean-gradient': 'linear-gradient(to right, #084050, #6397a8)',
+    			'ocean-gradient-alt': 'linear-gradient(to bottom, #6397a8, #084050)',
     			'grid-pattern': 'url("/assets/images/grid-pattern.png")',
     			'grid-pattern-light': 'url("/assets/images/grid-pattern-light.png")'
     		},

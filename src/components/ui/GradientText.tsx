@@ -19,7 +19,7 @@ const GradientText = ({
   animate = false,
 }: GradientTextProps) => {
   const gradientStyles = {
-    blue: 'bg-gradient-to-r from-apple-blue via-apple-highlight to-apple-blue',
+    blue: 'bg-gradient-to-r from-ocean-700 via-ocean-300 to-ocean-700',
     alt: 'bg-gradient-to-r from-apple-error via-apple-warning to-apple-accent',
     rainbow: 'bg-gradient-to-r from-[#5558DA] via-[#5FD3F3] via-[#9069ED] via-[#D560A3] to-[#F26095]',
     purple: 'bg-gradient-to-r from-[#8A2BE2] via-[#9370DB] to-[#9966FF]',
