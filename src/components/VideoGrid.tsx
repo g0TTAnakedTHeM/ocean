@@ -45,7 +45,7 @@ const VideoGrid = () => {
           </h2>
           <div className="flex justify-center my-10">
             <img 
-              src="/assets/logo/logo-small.png" 
+              src="/assets/logo/oceanlogotherapy.svg" 
               alt="Ocean Therapy Logo" 
               className="h-16 w-auto"
             />
