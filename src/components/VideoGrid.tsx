@@ -47,7 +47,7 @@ const VideoGrid = () => {
             <img 
               src="/assets/logo/logo-small.png" 
               alt="Ocean Therapy Logo" 
-              className="h-16 w-auto animate-pulse"
+              className="h-16 w-auto"
             />
           </div>
           <p className="text-xl md:text-2xl text-ocean-700/80 max-w-3xl mx-auto leading-relaxed mt-12 mb-4">
