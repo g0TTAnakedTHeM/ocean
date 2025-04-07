@@ -4,32 +4,32 @@ import { Anchor, Moon, Leaf } from 'lucide-react';
 const Concept = () => {
   const concepts = [
     {
-      icon: <img src="/assets/images/ocean-2-svgrepo-com.svg" alt="Ocean" className="w-10 h-10" />,
+      icon: <img src="/assets/images/ocean-2-svgrepo-com.svg" alt="Ocean" className="w-12 h-12" />,
       title: "Океанотерапія",
       description: "ОКЕАН - природна терапія для відновлення нервової системи. Контакт із водою знижує рівень стресу, активізує роботу мозку та сприяє емоційному розслабленню."
     },
     {
-      icon: <img src="/assets/images/surfing-svgrepo-com.svg" alt="Surfing" className="w-10 h-10" />,
+      icon: <img src="/assets/images/surfing-svgrepo-com.svg" alt="Surfing" className="w-12 h-12" />,
       title: "Серфінг",
       description: "СИЛА - серфінг вчить довіряти собі та моменту, зміцнює емоційну стійкість і пробуджує внутрішню силу та гармонію."
     },
     {
-      icon: <img src="/assets/images/strength-svgrepo-com.svg" alt="Strength" className="w-10 h-10" />,
+      icon: <img src="/assets/images/strength-svgrepo-com.svg" alt="Strength" className="w-12 h-12" />,
       title: "Фізична активність",
       description: "СПОКІЙ – можливість вимкнути шум міста й соцмереж. Природа навколо допомагає зупинитися, відчути момент і наповнитися гармонією."
     },
     {
-      icon: <img src="/assets/images/peace-svgrepo-com.svg" alt="Peace" className="w-10 h-10" />,
+      icon: <img src="/assets/images/peace-svgrepo-com.svg" alt="Peace" className="w-12 h-12" />,
       title: "Медитація",
       description: "ПРОБУДЖЕННЯ – Дихальні практики, цигун, медитація, саундхілінг, пілатес, масажі, практики садху відновлюють внутрішній баланс та ясність розуму. Справжне піклування про ментальне здоров'я."
     },
     {
-      icon: <img src="/assets/images/fire-alt-svgrepo-com.svg" alt="Awakening" className="w-10 h-10" />,
+      icon: <img src="/assets/images/fire-alt-svgrepo-com.svg" alt="Awakening" className="w-12 h-12" />,
       title: "Пробудження",
       description: "РАДІСТЬ – найголовніше в житті – це ти і твій внутрішній стан. Ти найцінніше що в тебе є. Дозволь внутрішній дитині відчувати справжню радість, а душі – гармонію."
     },
     {
-      icon: <img src="/assets/images/joy-figure-svgrepo-com.svg" alt="Joy" className="w-10 h-10" />,
+      icon: <img src="/assets/images/joy-figure-svgrepo-com.svg" alt="Joy" className="w-12 h-12" />,
       title: "Радість",
       description: "ОКЕАН - природна терапія для відновлення нервової системи. Контакт із водою знижує рівень стресу, активізує роботу мозку та сприяє емоційному розслабленню."
     }
