@@ -101,8 +101,8 @@ const Schedule = () => {
     <section id="schedule" className="apple-section bg-apple-gray-50">
       <div className="apple-container">
         <div className="text-center mb-20 fade-in-section">
-          <h2 className="apple-title">
-            Кожен день — пригода для себе і з собою
+          <h2 className="apple-title text-ocean-800">
+            Программа
           </h2>
           <div className="flex justify-center my-10">
             <img 
@@ -111,43 +111,26 @@ const Schedule = () => {
               className="h-16 w-auto"
             />
           </div>
-          <p className="apple-text">
+          <p className="apple-text text-ocean-800">
             Кожен день програми The Oceantherapy це незабутня пригода з собою та для себе. Це нові враження, новий досвід та нові відкриття себе
           </p>
         </div>
         
         {/* Day tabs */}
         <div className="flex justify-center space-x-3 mb-12 pb-2 fade-in-section bg-gray-100/80 py-3 px-6 rounded-full w-fit mx-auto shadow-sm">
-          <button
-            onClick={() => setActiveDay(1)}
-            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeDay === 1
-                ? 'bg-apple-blue text-white shadow-apple-md shadow-apple-blue/20'
-                : 'bg-white text-apple-gray-800 hover:bg-apple-gray-50'
-            }`}
-          >
-            День 1
-          </button>
-          <button
-            onClick={() => setActiveDay(2)}
-            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeDay === 2
-                ? 'bg-apple-blue text-white shadow-apple-md shadow-apple-blue/20'
-                : 'bg-apple-gray-50 text-apple-gray-800 hover:bg-apple-gray-100'
-            }`}
-          >
-            День 2-7
-          </button>
-          <button
-            onClick={() => setActiveDay(8)}
-            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeDay === 8
-                ? 'bg-apple-blue text-white shadow-apple-md shadow-apple-blue/20'
-                : 'bg-apple-gray-50 text-apple-gray-800 hover:bg-apple-gray-100'
-            }`}
-          >
-            День 8
-          </button>
+          {days.map((_, index) => (
+            <button
+              key={index + 1}
+              className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeDay === index + 1
+                  ? 'bg-ocean-800 text-white shadow-md'
+                  : 'bg-white text-ocean-800 hover:bg-ocean-50'
+              }`}
+              onClick={() => setActiveDay(index + 1)}
+            >
+              День {index + 1}
+            </button>
+          ))}
         </div>
         
         {/* Day content */}
@@ -174,13 +157,28 @@ const Schedule = () => {
                 </div>
                 
                 {/* Quote for each day */}
-                <div className="mt-14 apple-glass p-8">
-                  <p className="text-apple-gray-800 text-xl md:text-2xl tracking-tight font-light leading-relaxed text-center">
+                <div className="bg-ocean-800 p-8 rounded-xl shadow-lg my-12">
+                  <p className="text-xl md:text-2xl text-white text-center italic">
                     "The oceantherapy - шлях до усвідомленності та гармонії духу, тіла та розуму"
                   </p>
                 </div>
               </div>
             ))}
+        </div>
+
+        <div className="bg-ocean-800 p-8 rounded-xl text-center my-12">
+          <h3 className="text-2xl md:text-3xl text-white font-medium mb-4">
+            Дозволь собі провести найкращий час з собою і подаруй собі справжню радість та нові відчуття.
+          </h3>
+          <p className="text-white/90 mb-8">
+            Приєднуйтесь до унікального ретріту, який назавжди змінить ваше сприйняття себе та світу.
+          </p>
+          <a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-white text-ocean-800 rounded-xl font-medium hover:bg-white/90 transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg"
+          >
+            ХОЧУ І БРОНУЮ
+          </a>
         </div>
       </div>
     </section>

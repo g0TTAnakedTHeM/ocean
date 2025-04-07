@@ -94,8 +94,8 @@ const Location = () => {
     <section id="location" className="apple-section bg-gradient-to-b from-white to-ocean-50">
       <div className="apple-container">
         <div className="text-center mb-16 fade-in-section">
-          <h2 className="apple-title">
-            <MapPin className="w-8 h-8 mr-2 inline-block text-ocean-600" />
+          <h2 className="apple-title text-ocean-800">
+            <MapPin className="w-8 h-8 mr-2 inline-block text-ocean-800" />
             Де?
           </h2>
           <div className="flex justify-center my-10">
@@ -162,38 +162,40 @@ const Location = () => {
           </div>
 
           {/* Location features */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="apple-card p-6 text-center hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/assets/images/optimized/17-desktop.jpg" 
-                alt="Океан та пляж" 
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h4 className="text-lg font-medium text-ocean-800 mb-2">Ідеальні умови</h4>
-              <p className="text-apple-gray-600">
-                Різноманітні споти для серфінгу, підходящі для будь-якого рівня. Чиста вода та доглянуті пляжі.
-              </p>
-            </div>
-            <div className="apple-card p-6 text-center hover:scale-105 transition-transform duration-300">
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <img 
                 src="/assets/images/optimized/hotel3 2-desktop.jpg" 
                 alt="Готель та інфраструктура" 
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-80 object-cover rounded-lg"
               />
-              <h4 className="text-lg font-medium text-ocean-800 mb-2">Комфортне проживання</h4>
-              <p className="text-apple-gray-600">
-                Сучасний готель з усіма зручностями. Затишні номери, спа-зона та тераса для відпочинку.
-              </p>
-            </div>
-            <div className="apple-card p-6 text-center hover:scale-105 transition-transform duration-300">
               <img 
-                src="/assets/images/optimized/DSC_3165-desktop.jpg" 
-                alt="Місцева атмосфера" 
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                src="/assets/images/optimized/hotel4-desktop.jpg" 
+                alt="Готель та інфраструктура" 
+                className="w-full h-80 object-cover rounded-lg"
               />
-              <h4 className="text-lg font-medium text-ocean-800 mb-2">Особлива атмосфера</h4>
-              <p className="text-apple-gray-600">
-                Автентична португальська культура, привітні місцеві жителі та смачна кухня.
+              <img 
+                src="/assets/images/optimized/hotel5-desktop.jpg" 
+                alt="Готель та інфраструктура" 
+                className="w-full h-80 object-cover rounded-lg"
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <img 
+                src="/assets/images/optimized/hotel6-desktop.jpg" 
+                alt="Готель та інфраструктура" 
+                className="w-full h-80 object-cover rounded-lg"
+              />
+              <img 
+                src="/assets/images/optimized/hotel7-desktop.jpg" 
+                alt="Готель та інфраструктура" 
+                className="w-full h-80 object-cover rounded-lg"
+              />
+            </div>
+            <div className="mt-8 text-center">
+              <h4 className="text-lg font-medium text-ocean-800 mb-2">Комфортне проживання</h4>
+              <p className="text-apple-gray-600 max-w-2xl mx-auto">
+                Сучасний готель з усіма зручностями. Затишні номери, спа-зона та тераса для відпочинку.
               </p>
             </div>
           </div>
@@ -304,13 +306,9 @@ const Location = () => {
                 Лише 4 ретрити у сезоні 2025. Лімітована кількість гостей — до 12 людей.
               </p>
             </div>
-            <a 
+            <a
               href="#contact"
-              className="apple-btn-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              className="inline-block bg-ocean-800 hover:bg-ocean-700 text-white px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
             >
               Забронювати
             </a>

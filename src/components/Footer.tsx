@@ -28,9 +28,9 @@ const Footer = () => {
           <p className="apple-text text-apple-gray-500 mb-8">
             Приєднуйтесь до унікального ретріту, який назавжди змінить ваше сприйняття себе та світу.
           </p>
-          <a 
+          <a
             href="#pricing"
-            className="apple-btn-primary px-8 py-4 text-lg font-medium"
+            className="inline-block bg-ocean-800 hover:bg-ocean-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
           >
             ХОЧУ І БРОНЮЮ
           </a>

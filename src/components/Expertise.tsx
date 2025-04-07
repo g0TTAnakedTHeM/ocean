@@ -23,7 +23,9 @@ const Expertise = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-ocean-50/70 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="ocean-title">Чому нам довіряють?</h2>
+        <h2 className="ocean-title text-center text-ocean-800 mb-12">
+          Чому нам довіряють?
+        </h2>
         
         <div className="flex justify-center my-10">
           <img 

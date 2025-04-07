@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Moon, Leaf } from 'lucide-react';
-import { GradientText } from './ui/GradientText';
 
 const Concept = () => {
   const concepts = [
@@ -53,41 +52,32 @@ const Concept = () => {
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16 fade-in-section">
-          <h2 className="font-cormorant text-ocean-800 mb-6">
-            <span className="block text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
-              <GradientText 
-                variant="blue"
-                className="font-semibold"
-                animate={true}
-              >
-                OCEANTHERAPY
-              </GradientText>
-            </span>
-            <span className="block text-xl md:text-2xl lg:text-3xl font-normal text-ocean-700/80 max-w-3xl mx-auto leading-relaxed">
-              це унікальна програма яка поєднує серфінг та терапії для покращення ментального здоров'я та внутрішнього балансу
-            </span>
-          </h2>
-          <div className="flex justify-center my-10">
+          <div className="flex justify-center mb-10">
             <img 
-              src="/assets/logo/oceanlogotherapy.svg" 
-              alt="Ocean Therapy Logo" 
+              src="/assets/logo/oceantherapy-logo-options.pdf.png" 
+              alt="OCEANTHERAPY Logo" 
               className="h-16 w-auto"
             />
           </div>
+          <h2 className="font-cormorant text-ocean-800 mb-6">
+            <span className="block text-xl md:text-2xl lg:text-3xl font-normal text-ocean-800 max-w-3xl mx-auto leading-relaxed">
+              унікальна програма яка поєднує серфінг та терапії для покращення ментального здоров'я та внутрішнього балансу
+            </span>
+          </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {concepts.map((concept, index) => (
             <div 
               key={index} 
-              className="fade-in-section bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border border-ocean-100"
+              className="fade-in-section bg-[#a0ccdb] p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border border-ocean-100"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="mb-6 bg-ocean-50 p-4 rounded-full">
+                <div className="mb-6 bg-white/20 p-4 rounded-full">
                   {concept.icon}
                 </div>
-                <h3 className="text-xl font-medium text-ocean-800 mb-3">{concept.title}</h3>
-                <p className="text-ocean-800">{concept.description}</p>
+                <h3 className="text-xl font-medium text-white mb-3">{concept.title}</h3>
+                <p className="text-white">{concept.description}</p>
               </div>
             </div>
           ))}

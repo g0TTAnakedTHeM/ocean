@@ -41,9 +41,7 @@ const Navbar = () => {
               <img 
                 src={isScrolled ? "/assets/logo/oceantherapy-logo-options.pdf.png" : "/assets/logo/oceantherapy-logo-option-white.png"}
                 alt="OCEANTHERAPY Logo"
-                className={`h-8 md:h-9 transition-all duration-300 ${
-                  isScrolled ? '[filter:invert(31%)_sepia(98%)_saturate(1234%)_hue-rotate(211deg)_brightness(97%)_contrast(105%)]' : ''
-                }`}
+                className="transition-all duration-300 h-auto w-auto max-h-12"
               />
             </Link>
           </div>
