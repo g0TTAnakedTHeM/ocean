@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import Divider from './ui/Divider';
 import { GradientText } from './ui/GradientText';
 
 const VideoGrid = () => {
@@ -44,7 +43,13 @@ const VideoGrid = () => {
               Моменти ретріту
             </GradientText>
           </h2>
-          <Divider />
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/logo-small.png" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto animate-pulse"
+            />
+          </div>
           <p className="text-xl md:text-2xl text-ocean-700/80 max-w-3xl mx-auto leading-relaxed mt-12 mb-4">
             Яскраві спогади та емоції з наших океанічних пригод
           </p>
