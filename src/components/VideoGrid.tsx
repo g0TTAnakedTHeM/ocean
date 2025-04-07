@@ -20,6 +20,14 @@ const VideoGrid = () => {
     {
       src: '/assets/videos/3.mp4',
       title: 'Ocean Waves'
+    },
+    {
+      src: '/assets/videos/12-2.mp4',
+      title: 'Beach Relaxation'
+    },
+    {
+      src: '/assets/videos/15.mp4',
+      title: 'Sunset Therapy'
     }
   ];
 
@@ -42,7 +50,7 @@ const VideoGrid = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
             <div 
               key={index}
