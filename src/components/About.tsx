@@ -19,7 +19,13 @@ const About = () => {
               OCEANTHERAPY
             </GradientText>
           </h2>
-          <div className="apple-divider"></div>
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/oceanlogotherapy.svg" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="apple-text mt-12 mb-10 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed font-light">
             7 днів відпочинку тільки для тебе, повного перезавантаження, нових і незабутніх емоцій, справжньої радості, ментального відновлення та піклування про внутрішній стан.
           </p>

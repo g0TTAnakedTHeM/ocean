@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Anchor, Sun, Home, Users, Plane, Car, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import '@/styles/location.css';
-import Divider from './ui/Divider';
 
 const Location = () => {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
@@ -99,7 +98,13 @@ const Location = () => {
             <MapPin className="w-8 h-8 mr-2 inline-block text-ocean-600" />
             Де?
           </h2>
-          <Divider />
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/oceanlogotherapy.svg" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           
           {/* Main location showcase */}
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

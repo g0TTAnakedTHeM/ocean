@@ -1,12 +1,25 @@
 import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import SEO from './SEO';
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ 
+  children,
+  title,
+  description,
+  image,
+  url,
+  type
+}) => {
   useEffect(() => {
     // Enhanced fade effect with Apple's smooth animations
     const handleScroll = () => {
@@ -41,6 +54,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white antialiased">
+      <SEO 
+        title={title}
+        description={description}
+        image={image}
+        url={url}
+        type={type}
+      />
       <Navbar />
       <main className="flex-grow">
         {children}

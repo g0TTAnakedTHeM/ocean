@@ -104,7 +104,13 @@ const Schedule = () => {
           <h2 className="apple-title">
             Кожен день — пригода для себе і з собою
           </h2>
-          <div className="apple-divider"></div>
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/oceanlogotherapy.svg" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="apple-text">
             Кожен день програми The Oceantherapy це незабутня пригода з собою та для себе. Це нові враження, новий досвід та нові відкриття себе
           </p>

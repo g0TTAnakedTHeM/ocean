@@ -1,6 +1,5 @@
 import React from 'react';
 import { Anchor, Moon, Leaf } from 'lucide-react';
-import Divider from './ui/Divider';
 import { GradientText } from './ui/GradientText';
 
 const Concept = () => {
@@ -68,7 +67,13 @@ const Concept = () => {
               це унікальна програма яка поєднує серфінг та терапії для покращення ментального здоров'я та внутрішнього балансу
             </span>
           </h2>
-          <Divider />
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/oceanlogotherapy.svg" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

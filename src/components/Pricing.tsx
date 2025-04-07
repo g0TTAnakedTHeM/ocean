@@ -1,6 +1,5 @@
 import React from 'react';
 import { Check, Info, Star } from 'lucide-react';
-import Divider from './ui/Divider';
 
 const Pricing = () => {
   const includedFeatures = [
@@ -17,7 +16,13 @@ const Pricing = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-section">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-800 mb-6">Вартість</h2>
-          <Divider />
+          <div className="flex justify-center my-10">
+            <img 
+              src="/assets/logo/oceanlogotherapy.svg" 
+              alt="Ocean Therapy Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Ти найцінніше що в тебе є! Твій стан, твоє ментальне здоров'я та самопочуття.
           </p>

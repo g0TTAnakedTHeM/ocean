@@ -1,41 +1,48 @@
 import React from 'react';
 import { Award, Droplets, Users } from 'lucide-react';
-import Divider from './ui/Divider';
 
 const Expertise = () => {
-  const achievements = [
+  const expertise = [
     {
+      title: "Досвідчений психолог",
+      description: "Висококваліфікований спеціаліст з багаторічним досвідом роботи з травмами та психологічними проблемами.",
       icon: <Award className="w-10 h-10 stroke-1 text-ocean-700" />,
-      text: '3 місце у світі по океанотерапії від премії Aloha Award',
     },
     {
+      title: "Індивідуальний підхід",
+      description: "Розуміємо унікальність кожної людини і підбираємо методики з урахуванням особистих потреб.",
       icon: <Droplets className="w-10 h-10 stroke-1 text-ocean-700" />,
-      text: '5 років досвіду з проектом GOOD DAYS family surf camp',
     },
     {
+      title: "Групова динаміка",
+      description: "Робота в безпечній групі пришвидшує психологічні процеси та створює підтримуюче середовище.",
       icon: <Users className="w-10 h-10 stroke-1 text-ocean-700" />,
-      text: 'Понад 1000 гостей отримали досвід океанотерапії з нами',
-    },
+    }
   ];
 
   return (
     <section className="py-16 bg-gradient-to-b from-ocean-50/70 to-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 fade-in-section">
-          <h2 className="ocean-title">Чому нам довіряють?</h2>
-          <Divider />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="ocean-title">Чому нам довіряють?</h2>
+        
+        <div className="flex justify-center my-10">
+          <img 
+            src="/assets/logo/oceanlogotherapy.svg" 
+            alt="Ocean Therapy Logo" 
+            className="h-16 w-auto"
+          />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-section">
-          {achievements.map((achievement, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center"
-            >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+          {expertise.map((item, index) => (
+            <div key={index} className="text-center">
               <div className="bg-ocean-50 p-4 rounded-full mb-4">
-                {achievement.icon}
+                <div className="flex justify-center">
+                  {item.icon}
+                </div>
               </div>
-              <p className="text-gray-700">{achievement.text}</p>
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-apple-gray-700">{item.description}</p>
             </div>
           ))}
         </div>

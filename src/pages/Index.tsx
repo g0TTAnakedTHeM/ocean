@@ -66,7 +66,13 @@ const Index = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      title="OCEANTHERAPY - Терапія океаном для відновлення та гармонії"
+      description="7 днів відпочинку тільки для тебе, повного перезавантаження, нових і незабутніх емоцій, справжньої радості, ментального відновлення та піклування про внутрішній стан."
+      image="/assets/logo/oceanlogotherapy.svg"
+      url="https://oceantherapy.com"
+      type="website"
+    >
       <Hero />
       <Concept />
       <VideoGrid />
