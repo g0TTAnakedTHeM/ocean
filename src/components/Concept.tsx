@@ -6,32 +6,32 @@ const Concept = () => {
     {
       icon: <img src="/assets/images/ocean-2-svgrepo-com.svg" alt="Ocean" className="w-10 h-10" />,
       title: "Океанотерапія",
-      description: "Целісний підхід до оздоровлення через взаємодію з океаном"
+      description: "ОКЕАН - природна терапія для відновлення нервової системи. Контакт із водою знижує рівень стресу, активізує роботу мозку та сприяє емоційному розслабленню."
     },
     {
       icon: <img src="/assets/images/surfing-svgrepo-com.svg" alt="Surfing" className="w-10 h-10" />,
       title: "Серфінг",
-      description: "Навчання та практика серфінгу з професійними інструкторами"
+      description: "СИЛА - серфінг вчить довіряти собі та моменту, зміцнює емоційну стійкість і пробуджує внутрішню силу та гармонію."
     },
     {
       icon: <img src="/assets/images/strength-svgrepo-com.svg" alt="Strength" className="w-10 h-10" />,
       title: "Фізична активність",
-      description: "Різноманітні активності для підтримки фізичного здоров'я"
+      description: "СПОКІЙ – можливість вимкнути шум міста й соцмереж. Природа навколо допомагає зупинитися, відчути момент і наповнитися гармонією."
     },
     {
       icon: <img src="/assets/images/peace-svgrepo-com.svg" alt="Peace" className="w-10 h-10" />,
       title: "Медитація",
-      description: "Практики для досягнення внутрішнього спокою та балансу"
+      description: "ПРОБУДЖЕННЯ – Дихальні практики, цигун, медитація, саундхілінг, пілатес, масажі, практики садху відновлюють внутрішній баланс та ясність розуму. Справжне піклування про ментальне здоров'я."
     },
     {
       icon: <img src="/assets/images/fire-alt-svgrepo-com.svg" alt="Awakening" className="w-10 h-10" />,
       title: "Пробудження",
-      description: "Розкриття внутрішнього потенціалу та енергії"
+      description: "РАДІСТЬ – найголовніше в житті – це ти і твій внутрішній стан. Ти найцінніше що в тебе є. Дозволь внутрішній дитині відчувати справжню радість, а душі – гармонію."
     },
     {
       icon: <img src="/assets/images/joy-figure-svgrepo-com.svg" alt="Joy" className="w-10 h-10" />,
       title: "Радість",
-      description: "Створення простору для щастя та позитивних емоцій"
+      description: "ОКЕАН - природна терапія для відновлення нервової системи. Контакт із водою знижує рівень стресу, активізує роботу мозку та сприяє емоційному розслабленню."
     }
   ];
 
@@ -77,7 +77,7 @@ const Concept = () => {
                   {concept.icon}
                 </div>
                 <h3 className="text-xl font-medium text-white mb-3">{concept.title}</h3>
-                <p className="text-white">{concept.description}</p>
+                <p className="text-white text-sm">{concept.description}</p>
               </div>
             </div>
           ))}
