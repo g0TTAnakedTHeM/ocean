@@ -308,10 +308,10 @@ const Location = () => {
           </div>
 
           {/* Highlight badge */}
-          <div className="max-w-3xl mx-auto p-8 mt-16 text-center fade-in-section bg-white/20 rounded-xl shadow-md">
+          <div className="max-w-3xl mx-auto p-8 mt-16 text-center fade-in-section bg-[#a0ccdb] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border border-ocean-100">
             <div className="flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 mr-3 text-ocean-600" />
-              <p className="font-medium text-lg text-apple-gray-800">
+              <Users className="w-6 h-6 mr-3 text-white" />
+              <p className="font-medium text-lg text-white">
                 Лише 4 ретрити у сезоні 2025. Лімітована кількість гостей — до 12 людей.
               </p>
             </div>
