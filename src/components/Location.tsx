@@ -484,7 +484,7 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Відкритий простір</h3>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зона релаксації</h3>
                     <p className="text-sm opacity-90">Затишні місця для відпочинку та релаксації</p>
                   </div>
                 </div>
