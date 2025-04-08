@@ -7,9 +7,12 @@ const Location = () => {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentRetreatSlide, setCurrentRetreatSlide] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const retreatSliderRef = useRef<HTMLDivElement>(null);
   
   const totalSlides = 5; // Total number of slides
+  const totalRetreatSlides = 6; // Total number of retreat slides
   
   // Handle next and previous slide navigation
   const goToSlide = (slideIndex: number) => {
@@ -31,8 +34,30 @@ const Location = () => {
     }
   };
   
+  // Handle next and previous retreat slide navigation
+  const goToRetreatSlide = (slideIndex: number) => {
+    let targetIndex = slideIndex;
+    
+    // Handle wrapping around at the ends
+    if (targetIndex < 0) targetIndex = totalRetreatSlides - 1;
+    if (targetIndex >= totalRetreatSlides) targetIndex = 0;
+    
+    setCurrentRetreatSlide(targetIndex);
+    
+    // Scroll to the slide
+    if (retreatSliderRef.current) {
+      const slideWidth = retreatSliderRef.current.clientWidth;
+      retreatSliderRef.current.scrollTo({
+        left: slideWidth * targetIndex,
+        behavior: 'smooth'
+      });
+    }
+  };
+  
   const nextSlide = () => goToSlide(currentSlide + 1);
   const prevSlide = () => goToSlide(currentSlide - 1);
+  const nextRetreatSlide = () => goToRetreatSlide(currentRetreatSlide + 1);
+  const prevRetreatSlide = () => goToRetreatSlide(currentRetreatSlide - 1);
   
   // Handle manual scrolling to update currentSlide indicator
   useEffect(() => {
@@ -59,6 +84,32 @@ const Location = () => {
       }
     };
   }, [currentSlide]);
+
+  // Handle manual scrolling to update currentRetreatSlide indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      if (retreatSliderRef.current) {
+        const scrollPosition = retreatSliderRef.current.scrollLeft;
+        const slideWidth = retreatSliderRef.current.clientWidth;
+        const newIndex = Math.round(scrollPosition / slideWidth);
+        
+        if (newIndex !== currentRetreatSlide) {
+          setCurrentRetreatSlide(newIndex);
+        }
+      }
+    };
+    
+    const sliderElement = retreatSliderRef.current;
+    if (sliderElement) {
+      sliderElement.addEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      if (sliderElement) {
+        sliderElement.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [currentRetreatSlide]);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -347,7 +398,7 @@ const Location = () => {
             </h2>
 
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full">
+              <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full" ref={retreatSliderRef}>
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
                     src="/assets/images/optimized/hotel3 2-desktop.jpg" 
@@ -458,12 +509,13 @@ const Location = () => {
               </div>
               
               <div className="absolute bottom-3 left-0 right-0 flex justify-center space-x-2">
-                {[...Array(6)].map((_, index) => (
+                {[...Array(totalRetreatSlides)].map((_, index) => (
                   <div 
                     key={`retreat-dot-${index}`}
                     className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
-                      index === 0 ? 'bg-white' : 'bg-white/50'
+                      currentRetreatSlide === index ? 'bg-white' : 'bg-white/50'
                     }`}
+                    onClick={() => goToRetreatSlide(index)}
                   ></div>
                 ))}
               </div>
@@ -471,6 +523,7 @@ const Location = () => {
               {/* Arrow indicators for swiping */}
               <div 
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+                onClick={prevRetreatSlide}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6"></polyline>
@@ -478,6 +531,7 @@ const Location = () => {
               </div>
               <div 
                 className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+                onClick={nextRetreatSlide}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
