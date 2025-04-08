@@ -61,11 +61,11 @@
 }
 
 .slide-row.top {
-  animation: scrollLeft 40s linear infinite;
+  animation: scrollLeft 36s linear infinite;
 }
 
 .slide-row.bottom {
-  animation: scrollRight 40s linear infinite;
+  animation: scrollRight 36s linear infinite;
 }
 
 .slide {
@@ -117,10 +117,10 @@
   }
   
   .slide-row.top {
-    animation: scrollLeft 35s linear infinite;
+    animation: scrollLeft 31.5s linear infinite;
   }
   
   .slide-row.bottom {
-    animation: scrollRight 35s linear infinite;
+    animation: scrollRight 31.5s linear infinite;
   }
 } 
