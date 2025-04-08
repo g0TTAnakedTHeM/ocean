@@ -282,13 +282,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_7136-2-upscaled-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_7136-2-upscaled-desktop.jpg 1024w"
+                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_7136 2-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Серфінг на Балеалі"
                   />
                   <img 
-                    src="/assets/images/optimized/DSC_7136-2-upscaled-mobile.jpg" 
+                    src="/assets/images/optimized/DSC_7136 2-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Серфінг на Балеалі"
                   />
@@ -347,9 +347,9 @@ const Location = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-          </div>
-        </div>
-        
+              </div>
+            </div>
+            
             <div className="text-left space-y-6 px-4 mt-8">
               <h3 className="text-3xl font-semibold text-ocean-800">
                 Найкращий серф-спот Європи
@@ -538,7 +538,7 @@ const Location = () => {
                 </svg>
               </div>
             </div>
-        </div>
+          </div>
         
         {/* Mobile view with continuous animation */}
           <div className="block md:hidden mt-16 mb-10 fade-in-section">
