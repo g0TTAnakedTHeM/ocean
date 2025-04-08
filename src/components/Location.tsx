@@ -132,7 +132,7 @@ const Location = () => {
       if (element) observer.unobserve(element);
     };
   }, []);
-
+  
   const handleImageLoad = (index: number) => {
     setLoadedImages(prev => ({
       ...prev,
@@ -347,9 +347,9 @@ const Location = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-              </div>
-            </div>
-            
+          </div>
+        </div>
+        
             <div className="text-left space-y-6 px-4 mt-8">
               <h3 className="text-3xl font-semibold text-ocean-800">
                 Найкращий серф-спот Європи
@@ -538,101 +538,101 @@ const Location = () => {
                 </svg>
               </div>
             </div>
-          </div>
-
-          {/* Mobile view with continuous animation */}
+        </div>
+        
+        {/* Mobile view with continuous animation */}
           <div className="block md:hidden mt-16 mb-10 fade-in-section">
-            <div className="image-slider">
-              <div className="slide-track">
-                {/* Top row - moving left */}
-                <div className="slide-row top">
+          <div className="image-slider">
+            <div className="slide-track">
+              {/* Top row - moving left */}
+              <div className="slide-row top">
                   {[...topRowImages, ...topRowImages].map((img, index) => (
-                    <div key={`mobile-top-${index}`} className="slide">
-                      <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                        <img 
+                  <div key={`mobile-top-${index}`} className="slide">
+                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
                           src={img.mobile}
                           srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
-                          className={`transition-all duration-1000 ${
+                        className={`transition-all duration-1000 ${
                             loadedImages[index % topRowImages.length] ? 'loaded' : 'lazy-image'
-                          }`}
+                        }`}
                           loading="lazy"
                           onLoad={() => handleImageLoad(index % topRowImages.length)}
-                        />
-                      </div>
+                      />
                     </div>
-                  ))}
-                </div>
-                
-                {/* Bottom row - moving right */}
-                <div className="slide-row bottom">
+                  </div>
+                ))}
+              </div>
+              
+              {/* Bottom row - moving right */}
+              <div className="slide-row bottom">
                   {[...bottomRowImages, ...bottomRowImages].map((img, index) => (
-                    <div key={`mobile-bottom-${index}`} className="slide">
-                      <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                        <img 
+                  <div key={`mobile-bottom-${index}`} className="slide">
+                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
                           src={img.mobile}
                           srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
-                          className={`transition-all duration-1000 ${
+                        className={`transition-all duration-1000 ${
                             loadedImages[(index + topRowImages.length) % bottomRowImages.length] ? 'loaded' : 'lazy-image'
-                          }`}
+                        }`}
                           loading="lazy"
                           onLoad={() => handleImageLoad((index + topRowImages.length) % bottomRowImages.length)}
-                        />
-                      </div>
+                      />
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-          
-          {/* Desktop view with continuous animation */}
+        </div>
+        
+        {/* Desktop view with continuous animation */}
           <div className="hidden md:block mt-16 fade-in-section">
-            <div className="image-slider">
-              <div className="slide-track">
-                {/* Top row - moving left */}
-                <div className="slide-row top">
+          <div className="image-slider">
+            <div className="slide-track">
+              {/* Top row - moving left */}
+              <div className="slide-row top">
                   {[...topRowImages, ...topRowImages].map((img, index) => (
-                    <div key={`desktop-top-${index}`} className="slide">
-                      <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                        <img 
+                  <div key={`desktop-top-${index}`} className="slide">
+                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
                           src={img.desktop}
                           srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
-                          className={`transition-all duration-1000 ${
+                        className={`transition-all duration-1000 ${
                             loadedImages[index % topRowImages.length] ? 'loaded' : 'lazy-image'
-                          }`}
+                        }`}
                           loading="lazy"
                           onLoad={() => handleImageLoad(index % topRowImages.length)}
-                        />
-                      </div>
+                      />
                     </div>
-                  ))}
-                </div>
-                
-                {/* Bottom row - moving right */}
-                <div className="slide-row bottom">
+                  </div>
+                ))}
+              </div>
+              
+              {/* Bottom row - moving right */}
+              <div className="slide-row bottom">
                   {[...bottomRowImages, ...bottomRowImages].map((img, index) => (
-                    <div key={`desktop-bottom-${index}`} className="slide">
-                      <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                        <img 
+                  <div key={`desktop-bottom-${index}`} className="slide">
+                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
                           src={img.desktop}
                           srcSet={`${encodeSrcSetUrl(img.mobile)} 300w, ${encodeSrcSetUrl(img.desktop)} 600w`}
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
-                          className={`transition-all duration-1000 ${
+                        className={`transition-all duration-1000 ${
                             loadedImages[(index + topRowImages.length) % bottomRowImages.length] ? 'loaded' : 'lazy-image'
-                          }`}
+                        }`}
                           loading="lazy"
                           onLoad={() => handleImageLoad((index + topRowImages.length) % bottomRowImages.length)}
-                        />
-                      </div>
+                      />
                     </div>
-                  ))}
+                  </div>
+                ))}
                 </div>
               </div>
             </div>
