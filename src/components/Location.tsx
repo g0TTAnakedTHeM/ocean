@@ -340,44 +340,149 @@ const Location = () => {
             </div>
           </div>
 
-          {/* Location features */}
-          <div className="mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              <img 
-                src="/assets/images/optimized/hotel3 2-desktop.jpg" 
-                alt="Готель та інфраструктура" 
-                className="w-full h-80 object-cover rounded-lg"
-              />
-              <img 
-                src="/assets/images/optimized/hotel5-desktop.jpg" 
-                alt="Готель та інфраструктура" 
-                className="w-full h-80 object-cover rounded-lg"
-              />
-              <img 
-                src="/assets/images/optimized/L1250573 2-desktop.jpg" 
-                alt="Готель та інфраструктура" 
-                className="w-full h-80 object-cover rounded-lg"
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <img 
-                src="/assets/images/optimized/hotel8 2-desktop.jpg" 
-                alt="Готель та інфраструктура" 
-                className="w-full h-80 object-cover rounded-lg"
-              />
-              <img 
-                src="/assets/images/optimized/7-desktop.jpg" 
-                alt="Готель та інфраструктура" 
-                className="w-full h-80 object-cover rounded-lg"
-              />
-            </div>
-            
-            <div className="grid grid-cols-1 mt-6">
-              <img 
-                src="/assets/images/optimized/breakfast-desktop.jpg" 
-                alt="Сніданок" 
-                className="w-full h-80 object-contain rounded-lg"
-              />
+          {/* Retreat Program Showcase */}
+          <div className="mt-16 text-center">
+            <h2 className="text-3xl font-semibold text-ocean-800 mb-8">
+              Унікальна програма ретриту
+            </h2>
+
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/hotel3 2-desktop.jpg" 
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Готель та інфраструктура"
+                  />
+                  <img 
+                    src="/assets/images/optimized/hotel3 2-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Готель та інфраструктура"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Комфортне проживання</h3>
+                    <p className="text-sm opacity-90">Сучасні номери для відпочинку після активного дня</p>
+                  </div>
+                </div>
+                
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/hotel5-desktop.jpg"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Готель та інфраструктура" 
+                  />
+                  <img 
+                    src="/assets/images/optimized/hotel5-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Готель та інфраструктура"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зручна інфраструктура</h3>
+                    <p className="text-sm opacity-90">Всі необхідні умови для комфортного перебування</p>
+                  </div>
+                </div>
+                
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/L1250573 2-desktop.jpg"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Програма ретриту"
+                  />
+                  <img 
+                    src="/assets/images/optimized/L1250573 2-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Програма ретриту"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Групові практики</h3>
+                    <p className="text-sm opacity-90">Цінний досвід і підтримка у колі однодумців</p>
+                  </div>
+                </div>
+                
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/hotel8 2-desktop.jpg"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Готель та інфраструктура"
+                  />
+                  <img 
+                    src="/assets/images/optimized/hotel8 2-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Готель та інфраструктура"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зона відпочинку</h3>
+                    <p className="text-sm opacity-90">Місце для спілкування та обміну враженнями</p>
+                  </div>
+                </div>
+                
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/7-desktop.jpg"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Готель та інфраструктура"
+                  />
+                  <img 
+                    src="/assets/images/optimized/7-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Готель та інфраструктура"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Відкритий простір</h3>
+                    <p className="text-sm opacity-90">Затишні місця для відпочинку та релаксації</p>
+                  </div>
+                </div>
+                
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
+                  <img 
+                    src="/assets/images/optimized/breakfast-desktop.jpg"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Сніданок"
+                  />
+                  <img 
+                    src="/assets/images/optimized/breakfast-desktop.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Сніданок"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Здорове харчування</h3>
+                    <p className="text-sm opacity-90">Смачні та корисні сніданки для енергії на весь день</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-3 left-0 right-0 flex justify-center space-x-2">
+                {[...Array(6)].map((_, index) => (
+                  <div 
+                    key={`retreat-dot-${index}`}
+                    className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                      index === 0 ? 'bg-white' : 'bg-white/50'
+                    }`}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Arrow indicators for swiping */}
+              <div 
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </div>
+              <div 
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
             </div>
           </div>
 
