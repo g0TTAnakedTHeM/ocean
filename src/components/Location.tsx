@@ -117,80 +117,122 @@ const Location = () => {
           
           {/* Main location showcase */}
           <div className="mt-12">
-            <div className="relative overflow-x-auto hide-scrollbar pb-4">
-              <div className="flex space-x-4 w-max">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <div className="overflow-x-auto hide-scrollbar pb-2 snap-x snap-mandatory touch-pan-x flex w-full">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
                     src="/assets/images/optimized/baleal-desktop.jpg" 
-                    alt="Балеал з висоти" 
-                    className="w-full h-[300px] md:h-[400px] object-cover"
+                    srcSet="/assets/images/optimized/baleal-desktop.jpg 1024w"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Балеал з висоти"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Балеал, Португалія</h3>
+                  <img 
+                    src="/assets/images/optimized/baleal-mobile.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Балеал з висоти"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Балеал, Португалія</h3>
                     <p className="text-sm opacity-90">Унікальний півострів з ідеальними умовами для серфінгу</p>
                   </div>
                 </div>
                 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/17-desktop.jpg" 
+                    src="/assets/images/optimized/17-desktop.jpg"
+                    srcSet="/assets/images/optimized/17-desktop.jpg 1024w"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Пляж Балеалу" 
-                    className="w-full h-[300px] md:h-[400px] object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Пляжі Балеалу</h3>
+                  <img 
+                    src="/assets/images/optimized/17-mobile.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Пляж Балеалу"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Пляжі Балеалу</h3>
                     <p className="text-sm opacity-90">Прекрасні пляжі для відпочинку і серфінгу</p>
                   </div>
                 </div>
                 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_3165-desktop.jpg" 
-                    alt="Океанські хвилі" 
-                    className="w-full h-[300px] md:h-[400px] object-cover"
+                    src="/assets/images/optimized/DSC_3165-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_3165-desktop.jpg 1024w"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Океанські хвилі"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Атлантичний океан</h3>
+                  <img 
+                    src="/assets/images/optimized/DSC_3165-mobile.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Океанські хвилі"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Атлантичний океан</h3>
                     <p className="text-sm opacity-90">Ідеальні хвилі для серфінгу будь-якого рівня</p>
                   </div>
                 </div>
                 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg" 
-                    alt="Серфінг на Балеалі" 
-                    className="w-full h-[300px] md:h-[400px] object-cover"
+                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_7136 2-desktop.jpg 1024w"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Серфінг на Балеалі"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Серфінг</h3>
+                  <img 
+                    src="/assets/images/optimized/DSC_7136 2-mobile.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Серфінг на Балеалі"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Серфінг</h3>
                     <p className="text-sm opacity-90">Популярний спорт на Балеалі для всіх рівнів</p>
                   </div>
                 </div>
                 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/IMG_2830 2-desktop.jpg" 
-                    alt="Вечір на Балеалі" 
-                    className="w-full h-[300px] md:h-[400px] object-cover"
+                    src="/assets/images/optimized/IMG_2830 2-desktop.jpg"
+                    srcSet="/assets/images/optimized/IMG_2830 2-desktop.jpg 1024w"
+                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
+                    alt="Вечір на Балеалі"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Закати на узбережжі</h3>
+                  <img 
+                    src="/assets/images/optimized/IMG_2830 2-mobile.jpg" 
+                    className="w-full h-[280px] object-cover md:hidden"
+                    alt="Вечір на Балеалі"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Закати на узбережжі</h3>
                     <p className="text-sm opacity-90">Мальовничі вечори та атмосферні заходи сонця</p>
                   </div>
                 </div>
               </div>
               
-              <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 pb-2">
-                <div className="w-16 h-1 bg-ocean-800 rounded-full opacity-60"></div>
-                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
-                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
-                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
-                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
+              <div className="absolute bottom-3 left-0 right-0 flex justify-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+              </div>
+
+              {/* Arrow indicators for swiping */}
+              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/20 p-2 rounded-full text-white hidden sm:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </div>
+              <div className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/20 p-2 rounded-full text-white hidden sm:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
               </div>
             </div>
             
