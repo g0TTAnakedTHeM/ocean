@@ -11,45 +11,58 @@ const Contact = () => {
     setSubmitStatus('idle');
     
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      dates: formData.get('dates'),
-      message: formData.get('message')
-    };
-
+    
+    // Validate required fields
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const dates = formData.get('dates') as string;
+    
+    if (!name || !phone || !dates) {
+      setSubmitStatus('error');
+      alert('Будь ласка, заповніть всі обов\'язкові поля (ім\'я, телефон, дати).');
+      setIsSubmitting(false);
+      return;
+    }
+    
     try {
-      const formDataToSend = new URLSearchParams();
-      formDataToSend.append('name', data.name as string);
-      formDataToSend.append('email', (data.email as string) || '');
-      formDataToSend.append('phone', data.phone as string);
-      formDataToSend.append('dates', data.dates as string);
-      formDataToSend.append('message', (data.message as string) || '');
-
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwAhJjHEjBM6i48k0BDH7gGaf7fktEzFrfHW296sUd2s-O5npfwxgJ965Za6yvqnzvA/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSend
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
+      // Create a direct form submission
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
+      form.target = '_blank';
       
-      if (result.status === 'success') {
-        setSubmitStatus('success');
-        if (e.currentTarget) {
-          e.currentTarget.reset();
-        }
-        alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
-      } else {
-        throw new Error(result.message || 'Failed to submit form');
+      // Add form fields
+      const fields = {
+        name: name,
+        email: formData.get('email') || '',
+        phone: phone,
+        dates: dates,
+        message: formData.get('message') || ''
+      };
+      
+      Object.entries(fields).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value as string;
+        form.appendChild(input);
+      });
+      
+      // Add form to document and submit
+      document.body.appendChild(form);
+      form.submit();
+      
+      // Clean up
+      setTimeout(() => {
+        document.body.removeChild(form);
+      }, 1000);
+      
+      // Show success message
+      setSubmitStatus('success');
+      if (e.currentTarget) {
+        e.currentTarget.reset();
       }
+      alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus('error');
@@ -100,7 +113,7 @@ const Contact = () => {
             <img 
               src="/assets/logo/oceantherapy-logo-options.pdf.png" 
               alt="OCEANTHERAPY Logo" 
-              className="h-16 w-auto"
+              className="h-8 w-auto"
             />
           </div>
         </div>

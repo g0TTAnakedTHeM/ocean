@@ -36,12 +36,12 @@ const Navbar = () => {
     >
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
                 src={isScrolled ? "/assets/logo/oceantherapy-logo-options.pdf.png" : "/assets/logo/oceantherapy-logo-option-white.png"}
                 alt="OCEANTHERAPY Logo"
-                className="transition-all duration-300 h-auto w-auto max-h-12"
+                className="transition-all duration-300 h-auto w-auto max-h-6"
               />
             </Link>
           </div>

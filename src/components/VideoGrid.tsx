@@ -6,27 +6,27 @@ const VideoGrid = () => {
   const videos = [
     {
       src: '/assets/videos/11.mp4',
-      title: 'Ocean Therapy Experience'
+      title: 'Pilates / Breathwork'
     },
     {
       src: '/assets/videos/13-2.mp4',
-      title: 'Surfing Moments'
+      title: 'Sound Healing'
     },
     {
       src: '/assets/videos/19.mp4',
-      title: 'Meditation by the Ocean'
+      title: 'Meditation / Qi Gong'
     },
     {
       src: '/assets/videos/3.mp4',
-      title: 'Ocean Waves'
+      title: 'Surfing'
     },
     {
       src: '/assets/videos/12-2.mp4',
-      title: 'Beach Relaxation'
+      title: 'Mental Practice'
     },
     {
       src: '/assets/videos/15.mp4',
-      title: 'Sunset Therapy'
+      title: 'Massage / Spa'
     }
   ];
 

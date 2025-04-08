@@ -91,14 +91,14 @@ const Location = () => {
   ];
 
   return (
-    <section id="location" className="apple-section bg-gradient-to-b from-white to-ocean-50">
+    <section id="location" className="apple-section bg-gradient-to-b from-white to-ocean-50 pt-0 z-10 relative">
       <div className="apple-container">
-        <div className="text-center mb-16 fade-in-section">
+        <div className="text-center fade-in-section">
           <h2 className="apple-title text-ocean-800">
             <MapPin className="w-8 h-8 mr-2 inline-block text-ocean-800" />
             Де?
           </h2>
-          <div className="flex justify-center my-10">
+          <div className="flex justify-center my-4">
             <img 
               src="/assets/logo/oceanlogotherapy.svg" 
               alt="Ocean Therapy Logo" 
