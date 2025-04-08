@@ -140,11 +140,11 @@ const Schedule = () => {
           </button>
           <button
             className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeDay === 3
+              activeDay === 8
                 ? 'bg-ocean-800 text-white shadow-md'
                 : 'bg-white text-ocean-800 hover:bg-ocean-50'
             }`}
-            onClick={() => setActiveDay(3)}
+            onClick={() => setActiveDay(8)}
           >
             День 8
           </button>
