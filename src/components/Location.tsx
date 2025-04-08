@@ -174,13 +174,13 @@ const Location = () => {
               <div className="overflow-x-auto hide-scrollbar pb-2 snap-x snap-mandatory touch-pan-x flex w-full" ref={sliderRef}>
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/baleal-desktop.jpg" 
-                    srcSet="/assets/images/optimized/baleal-desktop.jpg 1024w"
+                    src="/assets/images/optimized/baleal-upscaled-desktop.jpg" 
+                    srcSet="/assets/images/optimized/baleal-upscaled-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Балеал з висоти"
                   />
                   <img 
-                    src="/assets/images/optimized/baleal-mobile.jpg" 
+                    src="/assets/images/optimized/baleal-upscaled-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Балеал з висоти"
                   />
