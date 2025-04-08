@@ -103,7 +103,7 @@ const Concept = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {concepts.map((concept, index) => (
+          {concepts.slice(0, 5).map((concept, index) => (
             <div 
               key={index} 
               className="fade-in-section bg-[#a0ccdb] p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border border-ocean-100"
