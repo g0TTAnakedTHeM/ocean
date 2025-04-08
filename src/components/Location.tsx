@@ -308,7 +308,7 @@ const Location = () => {
           </div>
 
           {/* Highlight badge */}
-          <div className="apple-card max-w-3xl mx-auto p-8 mt-16 text-center fade-in-section">
+          <div className="max-w-3xl mx-auto p-8 mt-16 text-center fade-in-section bg-white/20 rounded-xl shadow-md">
             <div className="flex items-center justify-center mb-4">
               <Users className="w-6 h-6 mr-3 text-ocean-600" />
               <p className="font-medium text-lg text-apple-gray-800">
