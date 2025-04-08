@@ -3,7 +3,7 @@ import Divider from './ui/Divider';
 
 const About = () => {
   return (
-    <section id="about" className="apple-section bg-white relative pb-0 mb-[-70px]">
+    <section id="about" className="apple-section bg-white relative pb-0 mb-[-30px]">
       <div className="absolute inset-0 bg-white"></div>
       
       <div className="apple-container">
