@@ -34,15 +34,8 @@ const Contact = () => {
     });
     
     try {
-      // Try the direct form submission approach as a fallback
-      // Create a direct form submission (this is more reliable with Google Apps Script)
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
-      form.target = '_blank';
-      
-      // Add form fields
-      const fields = {
+      // Create data in JSON format
+      const jsonData = {
         name: name,
         email: formData.get('email') || '',
         phone: phone,
@@ -50,15 +43,20 @@ const Contact = () => {
         message: formData.get('message') || ''
       };
       
-      Object.entries(fields).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value as string;
-        form.appendChild(input);
-      });
+      // Create a form that will submit JSON data
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
+      form.target = '_blank';
       
-      // Add form to document and submit
+      // Create a hidden input for the JSON data
+      const jsonInput = document.createElement('input');
+      jsonInput.type = 'hidden';
+      jsonInput.name = 'data';
+      jsonInput.value = JSON.stringify(jsonData);
+      form.appendChild(jsonInput);
+      
+      // Add to document and submit
       document.body.appendChild(form);
       form.submit();
       
