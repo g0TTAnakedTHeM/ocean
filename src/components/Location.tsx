@@ -171,7 +171,7 @@ const Location = () => {
           {/* Main location showcase */}
           <div className="mt-12">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <div className="overflow-x-auto hide-scrollbar pb-2 snap-x snap-mandatory touch-pan-x flex w-full" ref={sliderRef}>
+              <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full" ref={sliderRef}>
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
                     src="/assets/images/optimized/baleal-upscaled-desktop.jpg" 
@@ -193,13 +193,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/17-desktop.jpg"
-                    srcSet="/assets/images/optimized/17-desktop.jpg 1024w"
+                    src="/assets/images/optimized/17-upscaled-desktop.jpg"
+                    srcSet="/assets/images/optimized/17-upscaled-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Пляж Балеалу" 
                   />
                   <img 
-                    src="/assets/images/optimized/17-mobile.jpg" 
+                    src="/assets/images/optimized/17-upscaled-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Пляж Балеалу"
                   />
@@ -212,13 +212,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_3165-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_3165-desktop.jpg 1024w"
+                    src="/assets/images/optimized/DSC_3165-upscaled-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_3165-upscaled-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Океанські хвилі"
                   />
                   <img 
-                    src="/assets/images/optimized/DSC_3165-mobile.jpg" 
+                    src="/assets/images/optimized/DSC_3165-upscaled-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Океанські хвилі"
                   />
@@ -231,13 +231,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_7136 2-desktop.jpg 1024w"
+                    src="/assets/images/optimized/DSC_7136-2-upscaled-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_7136-2-upscaled-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Серфінг на Балеалі"
                   />
                   <img 
-                    src="/assets/images/optimized/DSC_7136 2-mobile.jpg" 
+                    src="/assets/images/optimized/DSC_7136-2-upscaled-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Серфінг на Балеалі"
                   />
@@ -349,33 +349,35 @@ const Location = () => {
                 className="w-full h-80 object-cover rounded-lg"
               />
               <img 
-                src="/assets/images/optimized/hotel4-desktop.jpg" 
+                src="/assets/images/optimized/hotel5-desktop.jpg" 
                 alt="Готель та інфраструктура" 
                 className="w-full h-80 object-cover rounded-lg"
               />
               <img 
-                src="/assets/images/optimized/hotel5-desktop.jpg" 
+                src="/assets/images/optimized/L1250573 2-desktop.jpg" 
                 alt="Готель та інфраструктура" 
                 className="w-full h-80 object-cover rounded-lg"
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <img 
-                src="/assets/images/optimized/hotel6-desktop.jpg" 
+                src="/assets/images/optimized/hotel8 2-desktop.jpg" 
                 alt="Готель та інфраструктура" 
                 className="w-full h-80 object-cover rounded-lg"
               />
               <img 
-                src="/assets/images/optimized/hotel7-desktop.jpg" 
+                src="/assets/images/optimized/7-desktop.jpg" 
                 alt="Готель та інфраструктура" 
                 className="w-full h-80 object-cover rounded-lg"
               />
             </div>
-            <div className="mt-8 text-center">
-              <h4 className="text-lg font-medium text-ocean-800 mb-2">Комфортне проживання</h4>
-              <p className="text-apple-gray-600 max-w-2xl mx-auto">
-                Сучасний готель з усіма зручностями. Затишні номери, спа-зона та тераса для відпочинку.
-              </p>
+            
+            <div className="grid grid-cols-1 mt-6">
+              <img 
+                src="/assets/images/optimized/breakfast-desktop.jpg" 
+                alt="Сніданок" 
+                className="w-full h-80 object-contain rounded-lg"
+              />
             </div>
           </div>
 
@@ -475,22 +477,6 @@ const Location = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Highlight badge */}
-          <div className="max-w-3xl mx-auto p-8 mt-16 text-center fade-in-section bg-[#a0ccdb] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border border-ocean-100">
-            <div className="flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 mr-3 text-white" />
-              <p className="font-medium text-lg text-white">
-                Лише 4 ретрити у сезоні 2025. Лімітована кількість гостей — до 12 людей.
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="inline-block bg-ocean-800 hover:bg-ocean-700 text-white px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
-            >
-              Забронювати
-            </a>
           </div>
         </div>
       </div>

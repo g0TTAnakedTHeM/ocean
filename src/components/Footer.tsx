@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="apple-container relative z-10">
         {/* Final CTA */}
         <div className="text-center mb-20 max-w-3xl mx-auto fade-in-section">
-          <h2 className="apple-headline text-3xl md:text-4xl text-apple-gray-800 mb-6">
+          <h2 className="apple-headline text-3xl md:text-4xl text-white mb-6 bg-[#a0ccdb] p-6 rounded-xl">
             Дозволь собі провести найкращій час з собою і подаруй собі справжню радість та нові відчуття.
           </h2>
           <p className="apple-text text-apple-gray-500 mb-8">
@@ -30,7 +30,7 @@ const Footer = () => {
           </p>
           <a
             href="#pricing"
-            className="inline-block bg-ocean-800 hover:bg-ocean-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+            className="inline-block bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white px-8 py-4 text-lg font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
           >
             ХОЧУ І БРОНЮЮ
           </a>
@@ -44,10 +44,6 @@ const Footer = () => {
                 OCEANTHERAPY
               </span>
             </div>
-            <p className="mt-4 text-apple-gray-500 max-w-md leading-relaxed">
-              7 днів повного перезавантаження та глибокого зв'язку зі своїм внутрішнім світом
-              на березі Атлантичного океану в Португалії.
-            </p>
           </div>
           
           {/* Contact */}

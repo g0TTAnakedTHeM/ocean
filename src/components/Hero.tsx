@@ -51,7 +51,7 @@ const Hero = () => {
         {/* Primary CTA */}
         <a 
           href="#contact" 
-          className="bg-ocean-800 hover:bg-ocean-700 group ripple-btn text-lg px-8 py-4 text-white font-medium rounded-full inline-flex items-center transition-all duration-300 shadow-lg"
+          className="bg-[#a0ccdb] hover:bg-[#8ebfcf] group ripple-btn text-lg px-8 py-4 text-white font-medium rounded-full inline-flex items-center transition-all duration-300 shadow-lg"
           style={{
             animation: isLoaded ? 'fadeIn 0.8s ease-out 0.6s both' : 'none'
           }}

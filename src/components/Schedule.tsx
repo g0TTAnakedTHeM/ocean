@@ -174,7 +174,7 @@ const Schedule = () => {
                 </div>
                 
                 {/* Quote for each day */}
-                <div className="bg-ocean-800 p-8 rounded-xl shadow-lg my-12">
+                <div className="bg-[#a0ccdb] p-8 rounded-xl shadow-lg my-12">
                   <p className="text-xl md:text-2xl text-white text-center italic">
                     "The oceantherapy - шлях до усвідомленності та гармонії духу, тіла та розуму"
                   </p>
@@ -183,7 +183,7 @@ const Schedule = () => {
             ))}
         </div>
 
-        <div className="bg-ocean-800 p-8 rounded-xl text-center my-12">
+        <div className="bg-[#a0ccdb] p-8 rounded-xl text-center my-12">
           <h3 className="text-2xl md:text-3xl text-white font-medium mb-4">
             Дозволь собі провести найкращий час з собою і подаруй собі справжню радість та нові відчуття.
           </h3>

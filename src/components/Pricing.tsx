@@ -45,7 +45,7 @@ const Pricing = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="block w-full bg-ocean-800 hover:bg-ocean-700 text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+                className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
               >
                 Забронювати місце
               </a>
@@ -87,7 +87,7 @@ const Pricing = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="block w-full bg-ocean-800 hover:bg-ocean-700 text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+                className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
               >
                 Забронювати місця
               </a>

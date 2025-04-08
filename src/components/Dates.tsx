@@ -56,7 +56,7 @@ const Dates = () => {
               className="fade-in-section"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className={`ocean-card h-full flex flex-col p-6 transform transition-all duration-300 hover:scale-[1.03] rounded-xl overflow-hidden bg-ocean-800`}>
+              <div className={`ocean-card h-full flex flex-col p-6 transform transition-all duration-300 hover:scale-[1.03] rounded-xl overflow-hidden bg-[#a0ccdb]`}>
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-sm text-white font-medium">{date.season}</div>
                   <div className="text-white">{date.icon}</div>
