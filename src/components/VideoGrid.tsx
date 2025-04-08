@@ -5,6 +5,7 @@ import { GradientText } from './ui/GradientText';
 const VideoGrid = () => {
   // Track which videos are visible and should play
   const [visibleVideos, setVisibleVideos] = useState<Record<number, boolean>>({});
+  const [loadedVideos, setLoadedVideos] = useState<Record<number, boolean>>({});
   const videoRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const videos = [
@@ -34,22 +35,40 @@ const VideoGrid = () => {
     }
   ];
 
+  // Initialize loadedVideos state
+  useEffect(() => {
+    const initialLoadedState: Record<number, boolean> = {};
+    videos.forEach((_, index) => {
+      initialLoadedState[index] = false;
+    });
+    setLoadedVideos(initialLoadedState);
+  }, []);
+
   // Setup intersection observer to detect which videos are visible
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.5
+      rootMargin: '100px', // Load videos a bit before they come into view
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const index = parseInt(entry.target.getAttribute('data-index') || '-1', 10);
         if (index >= 0) {
+          // Mark video as visible or not
           setVisibleVideos(prev => ({
             ...prev,
             [index]: entry.isIntersecting
           }));
+          
+          // If video becomes visible and hasn't been loaded yet, mark it as loaded
+          if (entry.isIntersecting && !loadedVideos[index]) {
+            setLoadedVideos(prev => ({
+              ...prev,
+              [index]: true
+            }));
+          }
         }
       });
     }, options);
@@ -63,7 +82,15 @@ const VideoGrid = () => {
         if (ref) observer.unobserve(ref);
       });
     };
-  }, []);
+  }, [loadedVideos]);
+
+  // Handle video ready event
+  const handleVideoReady = (index: number) => {
+    setLoadedVideos(prev => ({
+      ...prev,
+      [index]: true
+    }));
+  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-ocean-50 relative overflow-hidden">
@@ -99,34 +126,40 @@ const VideoGrid = () => {
               className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] fade-in-section group"
             >
               <div className="aspect-[4/3] relative bg-ocean-100">
-                {/* Only load and play videos when they're visible in viewport */}
-                {visibleVideos[index] && (
-                  <ReactPlayer
-                    url={video.src}
-                    playing={visibleVideos[index]}
-                    loop={true}
-                    muted={true}
-                    playsinline={true}
-                    width="100%"
-                    height="100%"
-                    style={{ position: 'absolute', top: 0, left: 0 }}
-                    config={{
-                      file: {
-                        attributes: {
-                          preload: 'auto',
-                          style: {
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover'
-                          }
-                        },
-                        forceVideo: true,
-                      }
-                    }}
-                  />
-                )}
-                {/* Show placeholder while video isn't loaded */}
-                {!visibleVideos[index] && (
+                {/* Load all videos but only play when visible */}
+                <ReactPlayer
+                  url={video.src}
+                  playing={visibleVideos[index]}
+                  loop={true}
+                  muted={true}
+                  playsinline={true}
+                  width="100%"
+                  height="100%"
+                  onReady={() => handleVideoReady(index)}
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0,
+                    opacity: loadedVideos[index] ? 1 : 0, // Hide until loaded
+                    transition: 'opacity 0.5s ease'
+                  }}
+                  config={{
+                    file: {
+                      attributes: {
+                        preload: 'auto',
+                        style: {
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }
+                      },
+                      forceVideo: true,
+                    }
+                  }}
+                />
+                
+                {/* Show placeholder until video is loaded */}
+                {!loadedVideos[index] && (
                   <div className="absolute inset-0 flex items-center justify-center bg-ocean-50">
                     <div className="animate-pulse flex flex-col items-center">
                       <div className="h-12 w-12 rounded-full bg-ocean-200"></div>
