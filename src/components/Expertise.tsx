@@ -23,7 +23,7 @@ const Expertise = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-ocean-50/70 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="ocean-title text-center text-ocean-800 mb-12">
+        <h2 className="ocean-title text-center text-ocean-800 mb-12 text-4xl md:text-5xl lg:text-6xl font-semibold">
           Чому нам довіряють?
         </h2>
         
