@@ -100,7 +100,7 @@ const Location = () => {
   ];
 
   return (
-    <section id="location" className="apple-section bg-gradient-to-b from-white to-ocean-50 pt-0 z-10 relative">
+    <section id="location" className="apple-section bg-white pt-0 z-10 relative">
       <div className="apple-container">
         <div className="text-center fade-in-section">
           <h2 className="apple-title text-ocean-800">
