@@ -215,7 +215,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {topRowImages.map((img, index) => (
+                  {[...topRowImages, ...topRowImages].map((img, index) => (
                     <div key={`mobile-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -224,10 +224,10 @@ const Location = () => {
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
-                            loadedImages[index % 4] ? 'loaded' : 'lazy-image'
+                            loadedImages[index % topRowImages.length] ? 'loaded' : 'lazy-image'
                           }`}
                           loading="lazy"
-                          onLoad={() => handleImageLoad(index % 4)}
+                          onLoad={() => handleImageLoad(index % topRowImages.length)}
                         />
                       </div>
                     </div>
@@ -236,7 +236,7 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {bottomRowImages.map((img, index) => (
+                  {[...bottomRowImages, ...bottomRowImages].map((img, index) => (
                     <div key={`mobile-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -245,10 +245,10 @@ const Location = () => {
                           sizes="(max-width: 768px) 300px, 600px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
-                            loadedImages[index % 4] ? 'loaded' : 'lazy-image'
+                            loadedImages[(index + topRowImages.length) % bottomRowImages.length] ? 'loaded' : 'lazy-image'
                           }`}
                           loading="lazy"
-                          onLoad={() => handleImageLoad(index % 4)}
+                          onLoad={() => handleImageLoad((index + topRowImages.length) % bottomRowImages.length)}
                         />
                       </div>
                     </div>
@@ -264,7 +264,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {topRowImages.map((img, index) => (
+                  {[...topRowImages, ...topRowImages].map((img, index) => (
                     <div key={`desktop-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -273,10 +273,10 @@ const Location = () => {
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
-                            loadedImages[index % 4] ? 'loaded' : 'lazy-image'
+                            loadedImages[index % topRowImages.length] ? 'loaded' : 'lazy-image'
                           }`}
                           loading="lazy"
-                          onLoad={() => handleImageLoad(index % 4)}
+                          onLoad={() => handleImageLoad(index % topRowImages.length)}
                         />
                       </div>
                     </div>
@@ -285,7 +285,7 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {bottomRowImages.map((img, index) => (
+                  {[...bottomRowImages, ...bottomRowImages].map((img, index) => (
                     <div key={`desktop-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -294,10 +294,10 @@ const Location = () => {
                           sizes="(min-width: 768px) 600px, 300px"
                           alt={`Baleal, Portugal - ${img.alt}`}
                           className={`transition-all duration-1000 ${
-                            loadedImages[index % 4] ? 'loaded' : 'lazy-image'
+                            loadedImages[(index + topRowImages.length) % bottomRowImages.length] ? 'loaded' : 'lazy-image'
                           }`}
                           loading="lazy"
-                          onLoad={() => handleImageLoad(index % 4)}
+                          onLoad={() => handleImageLoad((index + topRowImages.length) % bottomRowImages.length)}
                         />
                       </div>
                     </div>

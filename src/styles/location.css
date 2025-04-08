@@ -3,16 +3,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scrollRight {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
 }
 
@@ -50,14 +50,17 @@
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
-  width: 200%;
+  width: 100%;
   padding: 0 1rem;
+  overflow: hidden;
 }
 
 .slide-row {
   display: flex;
   gap: 1rem;
   width: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .slide-row.top {
