@@ -1,30 +1,77 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsLoaded(true);
     
-    // Preload video if needed
-    const video = document.getElementById('ocean-video') as HTMLVideoElement;
+    // Optimize video loading - only load when needed
+    const video = videoRef.current;
     if (video) {
-      video.load();
+      video.preload = "metadata"; // Just load metadata first
+      
+      // Create a lightweight observer to start loading video when close to viewport
+      const preloadObserver = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            video.preload = "auto"; // Switch to auto when close
+            video.load();
+            preloadObserver.disconnect();
+          }
+        },
+        { rootMargin: "500px 0px" } // Start preloading when 500px from viewport
+      );
+      
+      preloadObserver.observe(video);
+      
+      // Create another observer to track visibility for play/pause
+      const visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          setIsVisible(entry.isIntersecting);
+          
+          if (entry.isIntersecting) {
+            if (video.paused) video.play().catch(e => console.log('Video play failed:', e));
+          } else {
+            if (!video.paused) video.pause();
+          }
+        },
+        { threshold: 0.1 }
+      );
+      
+      if (sectionRef.current) {
+        visibilityObserver.observe(sectionRef.current);
+      }
+      
+      return () => {
+        preloadObserver.disconnect();
+        visibilityObserver.disconnect();
+      };
     }
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      ref={sectionRef}
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background video with higher quality ocean footage */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div className="absolute inset-0 bg-ocean-900/40 z-10"></div>
         <video 
+          ref={videoRef}
           id="ocean-video"
           autoPlay 
           muted 
           loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          poster="/assets/images/optimized/ocean-poster.jpg" // Add a poster image for initial load
         >
           <source src="/assets/videos/hero_compressed_g.mp4" type="video/mp4" />
         </video>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import { GradientText } from './ui/GradientText';
 
 const VideoGrid = () => {
+  // Track which videos are visible and should play
+  const [visibleVideos, setVisibleVideos] = useState<Record<number, boolean>>({});
+  const videoRefs = useRef<Array<HTMLDivElement | null>>([]);
+
   const videos = [
     {
       src: '/assets/videos/11.mp4',
@@ -29,6 +33,37 @@ const VideoGrid = () => {
       title: 'Massage / Spa'
     }
   ];
+
+  // Setup intersection observer to detect which videos are visible
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const index = parseInt(entry.target.getAttribute('data-index') || '-1', 10);
+        if (index >= 0) {
+          setVisibleVideos(prev => ({
+            ...prev,
+            [index]: entry.isIntersecting
+          }));
+        }
+      });
+    }, options);
+
+    videoRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      videoRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-ocean-50 relative overflow-hidden">
@@ -59,30 +94,46 @@ const VideoGrid = () => {
           {videos.map((video, index) => (
             <div 
               key={index}
+              ref={el => videoRefs.current[index] = el}
+              data-index={index}
               className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] fade-in-section group"
             >
-              <div className="aspect-[4/3] relative">
-                <ReactPlayer
-                  url={video.src}
-                  playing={true}
-                  loop={true}
-                  muted={true}
-                  playsinline={true}
-                  width="100%"
-                  height="100%"
-                  style={{ position: 'absolute', top: 0, left: 0 }}
-                  config={{
-                    file: {
-                      attributes: {
-                        style: {
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover'
-                        }
+              <div className="aspect-[4/3] relative bg-ocean-100">
+                {/* Only load and play videos when they're visible in viewport */}
+                {visibleVideos[index] && (
+                  <ReactPlayer
+                    url={video.src}
+                    playing={visibleVideos[index]}
+                    loop={true}
+                    muted={true}
+                    playsinline={true}
+                    width="100%"
+                    height="100%"
+                    style={{ position: 'absolute', top: 0, left: 0 }}
+                    config={{
+                      file: {
+                        attributes: {
+                          preload: 'auto',
+                          style: {
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }
+                        },
+                        forceVideo: true,
                       }
-                    }
-                  }}
-                />
+                    }}
+                  />
+                )}
+                {/* Show placeholder while video isn't loaded */}
+                {!visibleVideos[index] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-ocean-50">
+                    <div className="animate-pulse flex flex-col items-center">
+                      <div className="h-12 w-12 rounded-full bg-ocean-200"></div>
+                      <div className="h-4 w-24 mt-2 rounded bg-ocean-200"></div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6">
