@@ -116,20 +116,85 @@ const Location = () => {
           </div>
           
           {/* Main location showcase */}
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="/assets/images/optimized/baleal-desktop.jpg" 
-                alt="Балеал з висоти" 
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-semibold mb-2">Балеал, Португалія</h3>
-                <p className="text-sm opacity-90">Унікальний півострів з ідеальними умовами для серфінгу</p>
+          <div className="mt-12">
+            <div className="relative overflow-x-auto hide-scrollbar pb-4">
+              <div className="flex space-x-4 w-max">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                  <img 
+                    src="/assets/images/optimized/baleal-desktop.jpg" 
+                    alt="Балеал з висоти" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Балеал, Португалія</h3>
+                    <p className="text-sm opacity-90">Унікальний півострів з ідеальними умовами для серфінгу</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                  <img 
+                    src="/assets/images/optimized/17-desktop.jpg" 
+                    alt="Пляж Балеалу" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Пляжі Балеалу</h3>
+                    <p className="text-sm opacity-90">Прекрасні пляжі для відпочинку і серфінгу</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                  <img 
+                    src="/assets/images/optimized/DSC_3165-desktop.jpg" 
+                    alt="Океанські хвилі" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Атлантичний океан</h3>
+                    <p className="text-sm opacity-90">Ідеальні хвилі для серфінгу будь-якого рівня</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                  <img 
+                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg" 
+                    alt="Серфінг на Балеалі" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Серфінг</h3>
+                    <p className="text-sm opacity-90">Популярний спорт на Балеалі для всіх рівнів</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl min-w-[300px] md:min-w-[500px] flex-shrink-0">
+                  <img 
+                    src="/assets/images/optimized/IMG_2830 2-desktop.jpg" 
+                    alt="Вечір на Балеалі" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Закати на узбережжі</h3>
+                    <p className="text-sm opacity-90">Мальовничі вечори та атмосферні заходи сонця</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 pb-2">
+                <div className="w-16 h-1 bg-ocean-800 rounded-full opacity-60"></div>
+                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
+                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
+                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
+                <div className="w-16 h-1 bg-ocean-600 rounded-full opacity-30"></div>
               </div>
             </div>
-            <div className="text-left space-y-6 px-4">
+            
+            <div className="text-left space-y-6 px-4 mt-8">
               <h3 className="text-3xl font-semibold text-ocean-800">
                 Найкращий серф-спот Європи
               </h3>
