@@ -44,49 +44,49 @@ const Location = () => {
   // Optimized image paths with different sizes
   const images = [
     {
-      mobile: "/assets/images/optimized/IMG_8229-mobile.jpg",
-      desktop: "/assets/images/optimized/IMG_8229-desktop.jpg",
-      alt: "Surfing action shot"
+      mobile: "/assets/images/new-optimized/surf_6-mobile.jpg",
+      desktop: "/assets/images/new-optimized/surf_6-desktop.jpg",
+      alt: "Surfing session"
     },
     {
-      mobile: "/assets/images/optimized/hotel8 2-mobile.jpg",
-      desktop: "/assets/images/optimized/hotel8 2-desktop.jpg",
-      alt: "Hotel room interior"
+      mobile: "/assets/images/new-optimized/cacao3-mobile.jpg",
+      desktop: "/assets/images/new-optimized/cacao3-desktop.jpg",
+      alt: "Cacao ceremony"
     },
     {
-      mobile: "/assets/images/optimized/TNL_9631 2-mobile.jpg",
-      desktop: "/assets/images/optimized/TNL_9631 2-desktop.jpg",
-      alt: "Surf students on beach"
+      mobile: "/assets/images/new-optimized/dinner_2-mobile.jpg",
+      desktop: "/assets/images/new-optimized/dinner_2-desktop.jpg",
+      alt: "Dinner experience"
     },
     {
-      mobile: "/assets/images/optimized/5-mobile.jpg",
-      desktop: "/assets/images/optimized/5-desktop.jpg",
-      alt: "Meditation at sunset"
+      mobile: "/assets/images/new-optimized/massage-mobile.jpg",
+      desktop: "/assets/images/new-optimized/massage-desktop.jpg",
+      alt: "Therapeutic massage"
     },
     {
-      mobile: "/assets/images/optimized/IMG_2830 2-mobile.jpg",
-      desktop: "/assets/images/optimized/IMG_2830 2-desktop.jpg",
-      alt: "Hotel view"
+      mobile: "/assets/images/new-optimized/morning_routine_2-mobile.jpg",
+      desktop: "/assets/images/new-optimized/morning_routine_2-desktop.jpg",
+      alt: "Morning routine"
     },
     {
-      mobile: "/assets/images/optimized/hotel3 2-mobile.jpg",
-      desktop: "/assets/images/optimized/hotel3 2-desktop.jpg",
-      alt: "Hotel interior"
+      mobile: "/assets/images/new-optimized/singing_bowls_2-mobile.jpg",
+      desktop: "/assets/images/new-optimized/singing_bowls_2-desktop.jpg",
+      alt: "Sound healing"
     },
     {
-      mobile: "/assets/images/optimized/L1250573 2-mobile.jpg",
-      desktop: "/assets/images/optimized/L1250573 2-desktop.jpg",
-      alt: "Beach view"
+      mobile: "/assets/images/new-optimized/sunsets_-mobile.jpg",
+      desktop: "/assets/images/new-optimized/sunsets_-desktop.jpg",
+      alt: "Beautiful sunset"
     },
     {
-      mobile: "/assets/images/optimized/DSC_7136 2-mobile.jpg",
-      desktop: "/assets/images/optimized/DSC_7136 2-desktop.jpg",
+      mobile: "/assets/images/new-optimized/DSC_1025-mobile.jpg",
+      desktop: "/assets/images/new-optimized/DSC_1025-desktop.jpg",
       alt: "Ocean view"
     },
     {
-      mobile: "/assets/images/optimized/DSC_3165-mobile.jpg",
-      desktop: "/assets/images/optimized/DSC_3165-desktop.jpg",
-      alt: "Local atmosphere"
+      mobile: "/assets/images/new-optimized/Photo2-mobile.jpg",
+      desktop: "/assets/images/new-optimized/Photo2-desktop.jpg",
+      alt: "Beach view"
     }
   ];
 
