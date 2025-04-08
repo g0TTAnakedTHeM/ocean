@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Anchor, Sun, Home, Users, Plane, Car, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import '@/styles/location.css';
@@ -6,7 +6,60 @@ import '@/styles/location.css';
 const Location = () => {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
   
+  const totalSlides = 5; // Total number of slides
+  
+  // Handle next and previous slide navigation
+  const goToSlide = (slideIndex: number) => {
+    let targetIndex = slideIndex;
+    
+    // Handle wrapping around at the ends
+    if (targetIndex < 0) targetIndex = totalSlides - 1;
+    if (targetIndex >= totalSlides) targetIndex = 0;
+    
+    setCurrentSlide(targetIndex);
+    
+    // Scroll to the slide
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.clientWidth;
+      sliderRef.current.scrollTo({
+        left: slideWidth * targetIndex,
+        behavior: 'smooth'
+      });
+    }
+  };
+  
+  const nextSlide = () => goToSlide(currentSlide + 1);
+  const prevSlide = () => goToSlide(currentSlide - 1);
+  
+  // Handle manual scrolling to update currentSlide indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sliderRef.current) {
+        const scrollPosition = sliderRef.current.scrollLeft;
+        const slideWidth = sliderRef.current.clientWidth;
+        const newIndex = Math.round(scrollPosition / slideWidth);
+        
+        if (newIndex !== currentSlide) {
+          setCurrentSlide(newIndex);
+        }
+      }
+    };
+    
+    const sliderElement = sliderRef.current;
+    if (sliderElement) {
+      sliderElement.addEventListener('scroll', handleScroll);
+    }
+    
+    return () => {
+      if (sliderElement) {
+        sliderElement.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [currentSlide]);
+
   // Intersection Observer for lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -118,7 +171,7 @@ const Location = () => {
           {/* Main location showcase */}
           <div className="mt-12">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <div className="overflow-x-auto hide-scrollbar pb-2 snap-x snap-mandatory touch-pan-x flex w-full">
+              <div className="overflow-x-auto hide-scrollbar pb-2 snap-x snap-mandatory touch-pan-x flex w-full" ref={sliderRef}>
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
                     src="/assets/images/optimized/baleal-desktop.jpg" 
@@ -216,20 +269,30 @@ const Location = () => {
               </div>
               
               <div className="absolute bottom-3 left-0 right-0 flex justify-center space-x-2">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+                {[...Array(totalSlides)].map((_, index) => (
+                  <div 
+                    key={`dot-${index}`}
+                    className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                      currentSlide === index ? 'bg-white' : 'bg-white/50'
+                    }`}
+                    onClick={() => goToSlide(index)}
+                  ></div>
+                ))}
               </div>
 
               {/* Arrow indicators for swiping */}
-              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/20 p-2 rounded-full text-white hidden sm:flex">
+              <div 
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+                onClick={prevSlide}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
               </div>
-              <div className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/20 p-2 rounded-full text-white hidden sm:flex">
+              <div 
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 p-2 rounded-full text-white hidden sm:flex cursor-pointer transition-all duration-300"
+                onClick={nextSlide}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
