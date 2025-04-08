@@ -41,8 +41,8 @@ const Location = () => {
     return url.replace(/ /g, '%20');
   };
 
-  // Optimized image paths with different sizes
-  const images = [
+  // Optimized image paths with different sizes for top row
+  const topRowImages = [
     {
       mobile: "/assets/images/new-optimized/surf_6-mobile.jpg",
       desktop: "/assets/images/new-optimized/surf_6-desktop.jpg",
@@ -67,7 +67,11 @@ const Location = () => {
       mobile: "/assets/images/new-optimized/morning_routine_2-mobile.jpg",
       desktop: "/assets/images/new-optimized/morning_routine_2-desktop.jpg",
       alt: "Morning routine"
-    },
+    }
+  ];
+
+  // Optimized image paths with different sizes for bottom row
+  const bottomRowImages = [
     {
       mobile: "/assets/images/new-optimized/singing_bowls_2-mobile.jpg",
       desktop: "/assets/images/new-optimized/singing_bowls_2-desktop.jpg",
@@ -87,6 +91,11 @@ const Location = () => {
       mobile: "/assets/images/new-optimized/Photo2-mobile.jpg",
       desktop: "/assets/images/new-optimized/Photo2-desktop.jpg",
       alt: "Beach view"
+    },
+    {
+      mobile: "/assets/images/new-optimized/DSC_9084_2-mobile.jpg",
+      desktop: "/assets/images/new-optimized/DSC_9084_2-desktop.jpg",
+      alt: "Ocean therapy"
     }
   ];
 
@@ -206,7 +215,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {images.map((img, index) => (
+                  {topRowImages.map((img, index) => (
                     <div key={`mobile-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -227,8 +236,7 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {/* Use a different starting point for the bottom row */}
-                  {[...images.slice(4), ...images.slice(0, 4)].map((img, index) => (
+                  {bottomRowImages.map((img, index) => (
                     <div key={`mobile-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -256,7 +264,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {images.map((img, index) => (
+                  {topRowImages.map((img, index) => (
                     <div key={`desktop-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -277,8 +285,7 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {/* Use a different starting point for the bottom row */}
-                  {[...images.slice(4), ...images.slice(0, 4)].map((img, index) => (
+                  {bottomRowImages.map((img, index) => (
                     <div key={`desktop-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
