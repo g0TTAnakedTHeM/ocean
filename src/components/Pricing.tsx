@@ -56,8 +56,8 @@ const Pricing = () => {
               <h4 className="text-sm font-medium text-ocean-800 mb-4">Що включено</h4>
               <ul className="space-y-3">
                 {includedFeatures.map((feature, index) => (
-                  <li key={index} className="pricing-check">
-                    <Check className="pricing-check-icon" />
+                  <li key={index} className="flex items-start">
+                    <Check className="w-5 h-5 text-ocean-600 mt-0.5 flex-shrink-0" />
                     <span className="ml-3 text-sm text-ocean-800">{feature}</span>
                   </li>
                 ))}
@@ -98,8 +98,8 @@ const Pricing = () => {
               <h4 className="text-sm font-medium text-ocean-800 mb-4">Що включено</h4>
               <ul className="space-y-3">
                 {includedFeatures.map((feature, index) => (
-                  <li key={index} className="pricing-check">
-                    <Check className="pricing-check-icon" />
+                  <li key={index} className="flex items-start">
+                    <Check className="w-5 h-5 text-ocean-600 mt-0.5 flex-shrink-0" />
                     <span className="ml-3 text-sm text-ocean-800">{feature}</span>
                   </li>
                 ))}
