@@ -24,9 +24,25 @@ const Contact = () => {
       return;
     }
     
+    // Log form data for debugging
+    console.log('Form data being submitted:', {
+      name,
+      email: formData.get('email'),
+      phone,
+      dates,
+      message: formData.get('message')
+    });
+    
     try {
-      // Prepare the data as URL-encoded format (which is what Google Apps Script expects by default)
-      const formDataObj = {
+      // Try the direct form submission approach as a fallback
+      // Create a direct form submission (this is more reliable with Google Apps Script)
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
+      form.target = '_blank';
+      
+      // Add form fields
+      const fields = {
         name: name,
         email: formData.get('email') || '',
         phone: phone,
@@ -34,31 +50,29 @@ const Contact = () => {
         message: formData.get('message') || ''
       };
       
-      // Create URL encoded form data
-      const urlEncodedData = new URLSearchParams();
-      Object.entries(formDataObj).forEach(([key, value]) => {
-        urlEncodedData.append(key, value as string);
+      Object.entries(fields).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value as string;
+        form.appendChild(input);
       });
       
-      // Send the form data
-      const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec', 
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: urlEncodedData.toString(),
-          mode: 'no-cors' // This is important for Google Apps Script
-        }
-      );
+      // Add form to document and submit
+      document.body.appendChild(form);
+      form.submit();
       
-      // Since no-cors mode doesn't give us response details, we assume success
+      // Clean up
+      setTimeout(() => {
+        document.body.removeChild(form);
+      }, 1000);
+      
+      // Show success message
       setSubmitStatus('success');
       if (e.currentTarget) {
         e.currentTarget.reset();
       }
-      alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
+      alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом. Перевірте, чи відкрилась нова вкладка з підтвердженням.');
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus('error');
@@ -221,6 +235,11 @@ const Contact = () => {
               >
                 {isSubmitting ? 'Відправляємо...' : 'Відправити'}
               </button>
+            </div>
+            
+            <div className="text-sm mt-4 text-ocean-800/70 text-center">
+              <p>При відправці форми має відкритися нова вкладка з підтвердженням.</p>
+              <p>Якщо цього не сталося, будь ласка, перевірте блокування спливаючих вікон.</p>
             </div>
           </form>
         </div>
