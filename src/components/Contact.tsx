@@ -25,14 +25,8 @@ const Contact = () => {
     }
     
     try {
-      // Create a direct form submission
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
-      form.target = '_blank';
-      
-      // Add form fields
-      const fields = {
+      // Prepare the data as URL-encoded format (which is what Google Apps Script expects by default)
+      const formDataObj = {
         name: name,
         email: formData.get('email') || '',
         phone: phone,
@@ -40,24 +34,26 @@ const Contact = () => {
         message: formData.get('message') || ''
       };
       
-      Object.entries(fields).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value as string;
-        form.appendChild(input);
+      // Create URL encoded form data
+      const urlEncodedData = new URLSearchParams();
+      Object.entries(formDataObj).forEach(([key, value]) => {
+        urlEncodedData.append(key, value as string);
       });
       
-      // Add form to document and submit
-      document.body.appendChild(form);
-      form.submit();
+      // Send the form data
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec', 
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: urlEncodedData.toString(),
+          mode: 'no-cors' // This is important for Google Apps Script
+        }
+      );
       
-      // Clean up
-      setTimeout(() => {
-        document.body.removeChild(form);
-      }, 1000);
-      
-      // Show success message
+      // Since no-cors mode doesn't give us response details, we assume success
       setSubmitStatus('success');
       if (e.currentTarget) {
         e.currentTarget.reset();
