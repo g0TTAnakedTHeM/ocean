@@ -282,13 +282,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_7136 2-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_7136 2-desktop.jpg 1024w"
+                    src="/assets/images/optimized/DSC_7136%202-desktop.jpg"
+                    srcSet="/assets/images/optimized/DSC_7136%202-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Серфінг на Балеалі"
                   />
                   <img 
-                    src="/assets/images/optimized/DSC_7136 2-mobile.jpg" 
+                    src="/assets/images/optimized/DSC_7136%202-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Серфінг на Балеалі"
                   />
@@ -301,13 +301,13 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/IMG_2830 2-desktop.jpg"
-                    srcSet="/assets/images/optimized/IMG_2830 2-desktop.jpg 1024w"
+                    src="/assets/images/optimized/IMG_2830%202-desktop.jpg"
+                    srcSet="/assets/images/optimized/IMG_2830%202-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Вечір на Балеалі"
                   />
                   <img 
-                    src="/assets/images/optimized/IMG_2830 2-mobile.jpg" 
+                    src="/assets/images/optimized/IMG_2830%202-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Вечір на Балеалі"
                   />
@@ -401,12 +401,12 @@ const Location = () => {
               <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full" ref={retreatSliderRef}>
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/hotel3 2-desktop.jpg" 
+                    src="/assets/images/optimized/hotel3%202-desktop.jpg" 
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Готель та інфраструктура"
                   />
                   <img 
-                    src="/assets/images/optimized/hotel3 2-desktop.jpg" 
+                    src="/assets/images/optimized/hotel3%202-desktop.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Готель та інфраструктура"
                   />
@@ -437,12 +437,12 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/L1250573 2-desktop.jpg"
+                    src="/assets/images/optimized/L1250573%202-desktop.jpg"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Програма ретриту"
                   />
                   <img 
-                    src="/assets/images/optimized/L1250573 2-desktop.jpg" 
+                    src="/assets/images/optimized/L1250573%202-desktop.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Програма ретриту"
                   />
@@ -455,12 +455,12 @@ const Location = () => {
                 
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/hotel8 2-desktop.jpg"
+                    src="/assets/images/optimized/hotel8%202-desktop.jpg"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
                     alt="Готель та інфраструктура"
                   />
                   <img 
-                    src="/assets/images/optimized/hotel8 2-desktop.jpg" 
+                    src="/assets/images/optimized/hotel8%202-desktop.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
                     alt="Готель та інфраструктура"
                   />
