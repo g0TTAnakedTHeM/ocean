@@ -118,19 +118,36 @@ const Schedule = () => {
         
         {/* Day tabs */}
         <div className="flex justify-center space-x-3 mb-12 pb-2 fade-in-section bg-gray-100/80 py-3 px-6 rounded-full w-fit mx-auto shadow-sm">
-          {days.map((_, index) => (
-            <button
-              key={index + 1}
-              className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeDay === index + 1
-                  ? 'bg-ocean-800 text-white shadow-md'
-                  : 'bg-white text-ocean-800 hover:bg-ocean-50'
-              }`}
-              onClick={() => setActiveDay(index + 1)}
-            >
-              День {index + 1}
-            </button>
-          ))}
+          <button
+            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              activeDay === 1
+                ? 'bg-ocean-800 text-white shadow-md'
+                : 'bg-white text-ocean-800 hover:bg-ocean-50'
+            }`}
+            onClick={() => setActiveDay(1)}
+          >
+            День 1
+          </button>
+          <button
+            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              activeDay === 2
+                ? 'bg-ocean-800 text-white shadow-md'
+                : 'bg-white text-ocean-800 hover:bg-ocean-50'
+            }`}
+            onClick={() => setActiveDay(2)}
+          >
+            День 2-7
+          </button>
+          <button
+            className={`px-8 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              activeDay === 3
+                ? 'bg-ocean-800 text-white shadow-md'
+                : 'bg-white text-ocean-800 hover:bg-ocean-50'
+            }`}
+            onClick={() => setActiveDay(3)}
+          >
+            День 8
+          </button>
         </div>
         
         {/* Day content */}
