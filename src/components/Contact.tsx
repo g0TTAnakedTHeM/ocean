@@ -43,34 +43,22 @@ const Contact = () => {
         message: formData.get('message') || ''
       };
       
-      // Create a form that will submit JSON data
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
-      form.target = '_blank';
-      
-      // Create a hidden input for the JSON data
-      const jsonInput = document.createElement('input');
-      jsonInput.type = 'hidden';
-      jsonInput.name = 'data';
-      jsonInput.value = JSON.stringify(jsonData);
-      form.appendChild(jsonInput);
-      
-      // Add to document and submit
-      document.body.appendChild(form);
-      form.submit();
-      
-      // Clean up
-      setTimeout(() => {
-        document.body.removeChild(form);
-      }, 1000);
+      // Send data directly as JSON
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData),
+        mode: 'no-cors' // This is important for cross-origin requests to Google Scripts
+      });
       
       // Show success message
       setSubmitStatus('success');
       if (e.currentTarget) {
         e.currentTarget.reset();
       }
-      alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом. Перевірте, чи відкрилась нова вкладка з підтвердженням.');
+      alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus('error');
@@ -236,8 +224,7 @@ const Contact = () => {
             </div>
             
             <div className="text-sm mt-4 text-ocean-800/70 text-center">
-              <p>При відправці форми має відкритися нова вкладка з підтвердженням.</p>
-              <p>Якщо цього не сталося, будь ласка, перевірте блокування спливаючих вікон.</p>
+              <p>Натискаючи кнопку "Відправити", ви погоджуєтесь на обробку ваших персональних даних.</p>
             </div>
           </form>
         </div>
