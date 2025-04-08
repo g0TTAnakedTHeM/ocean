@@ -206,7 +206,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {[...images, ...images].map((img, index) => (
+                  {images.map((img, index) => (
                     <div key={`mobile-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -227,7 +227,8 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {[...images, ...images].map((img, index) => (
+                  {/* Use a different starting point for the bottom row */}
+                  {[...images.slice(4), ...images.slice(0, 4)].map((img, index) => (
                     <div key={`mobile-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -255,7 +256,7 @@ const Location = () => {
               <div className="slide-track">
                 {/* Top row - moving left */}
                 <div className="slide-row top">
-                  {[...images, ...images].map((img, index) => (
+                  {images.map((img, index) => (
                     <div key={`desktop-top-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
@@ -276,7 +277,8 @@ const Location = () => {
                 
                 {/* Bottom row - moving right */}
                 <div className="slide-row bottom">
-                  {[...images, ...images].map((img, index) => (
+                  {/* Use a different starting point for the bottom row */}
+                  {[...images.slice(4), ...images.slice(0, 4)].map((img, index) => (
                     <div key={`desktop-bottom-${index}`} className="slide">
                       <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <img 
