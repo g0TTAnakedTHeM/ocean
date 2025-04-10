@@ -197,6 +197,7 @@ const Contact = () => {
                     <option value="01-08 ТРАВНЯ">01-08 ТРАВНЯ</option>
                     <option value="30 ТРАВНЯ - 06 ЧЕРВНЯ">30 ТРАВНЯ - 06 ЧЕРВНЯ</option>
                     <option value="03-10 ЖОВТНЯ">03-10 ЖОВТНЯ</option>
+                    <option value="07-14 ЛИСТОПАДА">07-14 ЛИСТОПАДА</option>
                   </select>
                 </div>
               </div>
