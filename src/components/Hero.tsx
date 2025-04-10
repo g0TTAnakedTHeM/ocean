@@ -13,7 +13,8 @@ const Hero = () => {
     // Optimize video loading - only load when needed
     const video = videoRef.current;
     if (video) {
-      video.preload = "auto"; // Change to auto to ensure it loads
+      // Use lower quality preload to improve initial loading time
+      video.preload = "metadata";
       
       // Add event listeners to track video loading
       const handleCanPlay = () => {
@@ -64,7 +65,7 @@ const Hero = () => {
         ref={sectionRef}
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
-        {/* Background video with higher quality ocean footage */}
+        {/* Background video with responsive sources for different devices */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <div className="absolute inset-0 bg-ocean-900/40 z-10"></div>
           <video 
@@ -77,7 +78,24 @@ const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover"
             poster="/assets/images/optimized/ocean-poster.jpg"
           >
-            <source src="/assets/videos/hero_compressed_g.mp4" type="video/mp4" />
+            {/* Mobile version (for screens smaller than 640px) */}
+            <source 
+              media="(max-width: 639px)" 
+              src="/assets/videos/hero_mobile.mp4" 
+              type="video/mp4"
+            />
+            {/* Tablet version (for mid-sized screens) */}
+            <source 
+              media="(min-width: 640px) and (max-width: 1023px)" 
+              src="/assets/videos/hero_tablet.mp4" 
+              type="video/mp4"
+            />
+            {/* Desktop version (for larger screens) */}
+            <source 
+              media="(min-width: 1024px)" 
+              src="/assets/videos/hero_compressed_g.mp4" 
+              type="video/mp4"
+            />
           </video>
         </div>
         
