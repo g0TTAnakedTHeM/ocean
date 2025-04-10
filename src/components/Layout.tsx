@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SEO from './SEO';
+import FacebookPixel from './FacebookPixel';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -61,6 +62,7 @@ const Layout: React.FC<LayoutProps> = ({
         url={url}
         type={type}
       />
+      <FacebookPixel />
       <Navbar />
       <main className="flex-grow">
         {children}

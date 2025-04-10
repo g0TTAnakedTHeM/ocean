@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, User, Calendar } from 'lucide-react';
+import { trackLead } from './FacebookPixel';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,6 +53,9 @@ const Contact = () => {
         body: JSON.stringify(jsonData),
         mode: 'no-cors' // This is important for cross-origin requests to Google Scripts
       });
+      
+      // Track Facebook Lead event on successful submission
+      trackLead();
       
       // Show success message
       setSubmitStatus('success');
