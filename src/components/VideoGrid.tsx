@@ -35,7 +35,8 @@ const VideoGrid = () => {
     } else if (isTablet) {
       return `/assets/videos/optimized/${baseName}_tablet.mp4`;
     } else {
-      return `/assets/videos/${baseName}`;
+      // Use tablet version for desktop as well, since originals are moved to backup
+      return `/assets/videos/optimized/${baseName}_tablet.mp4`;
     }
   };
 
