@@ -7,30 +7,61 @@ const VideoGrid = () => {
   const [visibleVideos, setVisibleVideos] = useState<Record<number, boolean>>({});
   const [loadedVideos, setLoadedVideos] = useState<Record<number, boolean>>({});
   const videoRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    // Check screen size to determine which video version to use
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
+  const getVideoSrc = (baseName: string) => {
+    if (isMobile) {
+      return `/assets/videos/optimized/${baseName}_mobile.mp4`;
+    } else if (isTablet) {
+      return `/assets/videos/optimized/${baseName}_tablet.mp4`;
+    } else {
+      return `/assets/videos/${baseName}`;
+    }
+  };
 
   const videos = [
     {
-      src: '/assets/videos/11.mp4',
+      baseName: '11',
       title: 'Pilates / Breathwork'
     },
     {
-      src: '/assets/videos/13-2.mp4',
+      baseName: '13-2',
       title: 'Sound Healing'
     },
     {
-      src: '/assets/videos/19.mp4',
+      baseName: '19',
       title: 'Meditation / Qi Gong'
     },
     {
-      src: '/assets/videos/3.mp4',
+      baseName: '3',
       title: 'Surfing'
     },
     {
-      src: '/assets/videos/12-2.mp4',
+      baseName: '12-2',
       title: 'Mental Practice'
     },
     {
-      src: '/assets/videos/15.mp4',
+      baseName: '15',
       title: 'Massage / Spa'
     }
   ];
@@ -126,9 +157,9 @@ const VideoGrid = () => {
               className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] fade-in-section group"
             >
               <div className="aspect-[4/3] relative bg-ocean-100">
-                {/* Load all videos but only play when visible */}
+                {/* Use optimized video sources based on screen size */}
                 <ReactPlayer
-                  url={video.src}
+                  url={getVideoSrc(video.baseName)}
                   playing={visibleVideos[index]}
                   loop={true}
                   muted={true}
