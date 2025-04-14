@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from '../hooks/useTranslation';
+import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +28,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Головна', href: '/' },
-    { name: 'Про нас', href: '#about' },
-    { name: 'Розташування', href: '#location' },
-    { name: 'Дати', href: '#dates' },
-    { name: 'Розклад', href: '#schedule' },
-    { name: 'Вартість', href: '#pricing' },
-    { name: 'Контакти', href: '#contact' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.location'), href: '#location' },
+    { name: t('nav.dates'), href: '#dates' },
+    { name: t('nav.schedule'), href: '#schedule' },
+    { name: t('nav.pricing'), href: '#pricing' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -47,23 +58,50 @@ const Navbar = () => {
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-medium relative group transition-colors duration-300 ${
-                    isScrolled ? 'text-apple-gray-800 hover:text-apple-blue' : 'text-white/90 hover:text-white'
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium relative group transition-colors duration-300 ${
+                  isScrolled ? 'text-apple-gray-800 hover:text-apple-blue' : 'text-white/90 hover:text-white'
+                }`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                  isScrolled ? 'bg-apple-blue' : 'bg-white'
+                }`}></span>
+              </a>
+            ))}
+            
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={`${
+                    isScrolled 
+                      ? 'text-apple-gray-800 hover:text-apple-blue' 
+                      : 'text-white/90 hover:text-white'
                   }`}
                 >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                    isScrolled ? 'bg-apple-blue' : 'bg-white'
-                  }`}></span>
-                </a>
-              ))}
-            </div>
+                  <Globe className="h-4 w-4" />
+                  <span className="sr-only">{t('nav.switchLanguage')}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  {t('nav.english')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('uk')}>
+                  {t('nav.ukrainian')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('ru')}>
+                  {t('nav.russian')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           
           {/* Mobile menu button */}
@@ -79,7 +117,7 @@ const Navbar = () => {
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
-              <span className="sr-only">Відкрити головне меню</span>
+              <span className="sr-only">{t('nav.openMenu')}</span>
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
@@ -104,6 +142,43 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          
+          {/* Mobile Language Switcher */}
+          <div className="px-3 py-3">
+            <div className="text-sm font-medium text-apple-gray-800 mb-2">{t('nav.language')}</div>
+            <div className="flex space-x-2">
+              <Button
+                variant={language === 'en' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => {
+                  setLanguage('en');
+                  setIsMenuOpen(false);
+                }}
+              >
+                EN
+              </Button>
+              <Button
+                variant={language === 'uk' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => {
+                  setLanguage('uk');
+                  setIsMenuOpen(false);
+                }}
+              >
+                UA
+              </Button>
+              <Button
+                variant={language === 'ru' ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => {
+                  setLanguage('ru');
+                  setIsMenuOpen(false);
+                }}
+              >
+                RU
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
