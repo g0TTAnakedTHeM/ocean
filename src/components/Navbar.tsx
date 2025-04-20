@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from '../hooks/useTranslation';
 import { Button } from './ui/button';
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,12 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Function to handle language change and navigation
+  const handleLanguageChange = (lang: 'en' | 'uk' | 'ru') => {
+    setLanguage(lang);
+    navigate(`/${lang}${window.location.hash}`);
+  };
 
   const navLinks = [
     { name: t('nav.home'), href: '/' },
@@ -48,7 +55,7 @@ const Navbar = () => {
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to={`/${language}`} className="flex items-center">
               <img 
                 src={isScrolled ? "/assets/logo/oceantherapy-logo-options.pdf.png" : "/assets/logo/oceantherapy-logo-option-white.png"}
                 alt="OCEANTHERAPY Logo"
@@ -62,7 +69,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={link.href === '/' ? `/${language}` : link.href}
                 className={`text-sm font-medium relative group transition-colors duration-300 ${
                   isScrolled ? 'text-apple-gray-800 hover:text-apple-blue' : 'text-white/90 hover:text-white'
                 }`}
@@ -91,13 +98,13 @@ const Navbar = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                <DropdownMenuItem onClick={() => handleLanguageChange('en')}>
                   {t('nav.english')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('uk')}>
+                <DropdownMenuItem onClick={() => handleLanguageChange('uk')}>
                   {t('nav.ukrainian')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('ru')}>
+                <DropdownMenuItem onClick={() => handleLanguageChange('ru')}>
                   {t('nav.russian')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -135,7 +142,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={link.href === '/' ? `/${language}` : link.href}
               className="block px-3 py-3 rounded-lg text-sm font-medium text-apple-gray-800 hover:text-apple-blue hover:bg-apple-gray-50 transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -151,7 +158,7 @@ const Navbar = () => {
                 variant={language === 'en' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => {
-                  setLanguage('en');
+                  handleLanguageChange('en');
                   setIsMenuOpen(false);
                 }}
               >
@@ -161,7 +168,7 @@ const Navbar = () => {
                 variant={language === 'uk' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => {
-                  setLanguage('uk');
+                  handleLanguageChange('uk');
                   setIsMenuOpen(false);
                 }}
               >
@@ -171,7 +178,7 @@ const Navbar = () => {
                 variant={language === 'ru' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => {
-                  setLanguage('ru');
+                  handleLanguageChange('ru');
                   setIsMenuOpen(false);
                 }}
               >
