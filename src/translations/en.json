@@ -1,0 +1,233 @@
+{
+  "common": {
+    "bookNow": "BOOK NOW",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "send": "Send",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "selectDate": "Select Date",
+    "required": "Required",
+    "processingConsent": "By clicking the 'Send' button, you agree to the processing of your personal data",
+    "successMessage": "Thank you for your message! We will get back to you soon.",
+    "errorMessage": "Please fill in all required fields.",
+    "namePlaceholder": "First Name & Last Name",
+    "emailPlaceholder": "your@email.com",
+    "phonePlaceholder": "+380 or any other format",
+    "messagePlaceholder": "Additional information or requests...",
+    "bookYourSpot": "Book Your Spot Now",
+    "iWantToBook": "I WANT TO BOOK"
+  },
+  "dates": {
+    "title": "When?",
+    "subtitle": "Choose a date that works best for you and reserve your spot at our retreat. Each season offers its own unique charm and special opportunities for surfing.",
+    "available": "Spots available",
+    "spots": "spots",
+    "book": "Book Now",
+    "spring": "Spring",
+    "summer": "Summer",
+    "autumn": "Autumn"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Fill out the form below and we'll get back to you as soon as possible",
+    "formTitle": "Contact Form",
+    "dateLabel": "Preferred Retreat Dates",
+    "closingMessage": "Allow yourself to spend the best time with yourself and gift yourself true joy and new sensations. Join this unique retreat that will forever change your perception of yourself and the world."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "location": "Location",
+    "dates": "Dates",
+    "schedule": "Schedule",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "switchLanguage": "Switch language",
+    "english": "English",
+    "ukrainian": "Ukrainian",
+    "russian": "Russian",
+    "language": "Language",
+    "openMenu": "Open main menu"
+  },
+  "hero": {
+    "tagline": "a unique program that combines surfing and therapies to enhance mental health and inner balance"
+  },
+  "services": {
+    "oceantherapy": {
+      "title": "Oceantherapy",
+      "description": "The ocean is a natural therapy for restoring the nervous system. Contact with the water reduces stress levels, stimulates brain activity and promotes emotional relaxation."
+    },
+    "surfing": {
+      "title": "Surfing",
+      "description": "Strength. Surfing teaches you to trust yourself and the moment, strengthening emotional resilience while awakening inner strength and harmony."
+    },
+    "calmness": {
+      "title": "Calmness",
+      "description": "Here and now – an opportunity to disconnect from the noise of the city and social media. The nature around you helps to pause, feel the moment and fill yourself with harmony."
+    },
+    "awakening": {
+      "title": "Awakening",
+      "description": "Reboot – breathwork practices, qigong, meditation, sound healing, pilates, massages and sadhu practices restore inner balance and mental clarity. True care for mental health."
+    },
+    "happiness": {
+      "title": "Happiness",
+      "description": "You are the most important thing you have. Your inner state is everything. Allow your inner child to feel true joy and your soul to experience harmony."
+    },
+    "retreatMoments": {
+      "title": "Retreat Moments",
+      "description": "Vivid memories and emotions from our oceanic adventures.",
+      "subtitle": "7 days of relaxation just for you, full of recharging, new and unforgettable emotions, true joy, mental restoration and care for your inner state."
+    }
+  },
+  "location": {
+    "title": "Where?",
+    "baleal": {
+      "title": "Baleal, Portugal",
+      "description": "A unique peninsula with perfect conditions for surfing"
+    },
+    "surfing": {
+      "title": "Surfing",
+      "description": "A popular sport on Baleal for all skill levels"
+    },
+    "beaches": {
+      "title": "Baleal Beaches",
+      "description": "Beautiful beaches for relaxation and surfing"
+    },
+    "sunsets": {
+      "title": "Sunsets on the Coast",
+      "description": "Picturesque evenings and atmospheric sunsets"
+    },
+    "ocean": {
+      "title": "The Atlantic Ocean",
+      "description": "Ideal waves for surfers of all levels"
+    },
+    "bestSpot": {
+      "title": "The Best Surf Spot in Europe",
+      "description": "Baleal is a unique place where the ocean creates perfect conditions for surfing year-round. Here you'll find waves suitable for all skill levels, from beginners to professionals."
+    },
+    "easyToReach": {
+      "title": "Easy to Reach",
+      "description": "Direct budget flights to Lisbon and quick transfers to Baleal"
+    },
+    "convenientLogistics": {
+      "title": "Convenient Logistics",
+      "description": "Airport transfer to your accommodation"
+    },
+    "perfectTiming": {
+      "title": "Perfect Timing",
+      "description": "Comfortable weather and waves all year long"
+    },
+    "everythingNearby": {
+      "title": "Everything Nearby",
+      "description": "The ocean, cafes and shops within walking distance"
+    }
+  },
+  "program": {
+    "title": "The unique retreat program",
+    "accommodations": {
+      "title": "Comfortable Accommodation",
+      "description": "Modern rooms for relaxation after an active day"
+    },
+    "infrastructure": {
+      "title": "Convenient Infrastructure",
+      "description": "All the necessary amenities for a comfortable stay"
+    },
+    "groupPractices": {
+      "title": "Group Practices",
+      "description": "Valuable experience and support in a like-minded community"
+    },
+    "relaxationZone": {
+      "title": "Relaxation Zone",
+      "description": "Cozy spots for rest and relaxation"
+    },
+    "relaxationArea": {
+      "title": "Relaxation Area",
+      "description": "A space for relaxation and exchanging impressions"
+    },
+    "healthyNutrition": {
+      "title": "Healthy Nutrition",
+      "description": "Tasty and nutritious breakfasts to energize you for the whole day"
+    }
+  },
+  "schedule": {
+    "title": "Program",
+    "description": "Every day of The Oceantherapy program is an unforgettable journey with yourself and for yourself. It's about new experiences, fresh impressions, and meaningful self-discovery.",
+    "day1": {
+      "title": "Day 1 – Arrival & Welcome",
+      "arrival": "Arrival at Lisbon Airport, transfer to Baleal, and hotel check-in.",
+      "tour": "Tour of the place of power Baleal. Meet & greet with the group and team.",
+      "dinner": "Sunset and a welcome dinner featuring traditional Portuguese cuisine."
+    },
+    "days2to7": {
+      "title": "Days 2–7",
+      "oceanTherapy": "Ocean Therapy",
+      "breakfast": "Breakfast",
+      "surfing": "Surf Session",
+      "lunch": "Lunch & Rest",
+      "practices": "Practices & Activities",
+      "practicesDetails": "Pilates / Sound Healing / Sadhu Board Therapy / Massage / Cacao Ceremony / Spa / Bike Tours / Excursions / Soulful Sunset Moments / Private Photo Session"
+    },
+    "day8": {
+      "title": "Day 8",
+      "breakfast": "Group Breakfast",
+      "wishes": "Group Hug & Exchange of Wishes",
+      "checkout": "Check-out & Transfer to Lisbon Airport"
+    },
+    "quote": "The Oceantherapy – a journey toward mindfulness and harmony of spirit, body and mind.",
+    "closingMessage": "Allow yourself to spend the best time with yourself and gift yourself true joy and new sensations. Join this unique retreat that will forever change your perception of yourself and the world."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "description": "You are the most valuable thing you have! Your condition, your mental health and well-being.",
+    "individual": {
+      "title": "Individual Participation",
+      "price": "1850 €",
+      "description": "Full package with individual accommodation",
+      "button": "Book Your Spot"
+    },
+    "double": {
+      "title": "Double Participation",
+      "price": "1550 €",
+      "description": "For couples or friends traveling together",
+      "button": "Book Your Spot",
+      "popular": "Most Popular"
+    },
+    "included": {
+      "title": "What's included",
+      "accommodation": "Accommodation in a hotel by the ocean",
+      "breakfasts": "Breakfasts",
+      "surfing": "5 surfing lessons (with equipment, wetsuit, insurance)",
+      "oceanTherapy": "5 morning ocean therapy sessions, breathing practices, qigong, tea ceremony",
+      "activities": "All additional activities: SPA, massage, photoshoot, dinner, excursions",
+      "practices": "All practices: pilates, sound healing, ceremonies and meditation",
+      "transfer": "Airport transfer (to/from)"
+    },
+    "note": "All you need to do is buy a ticket and arrive. We'll meet you and take care of everything else"
+  },
+  "whyTrust": {
+    "title": "Why do people trust us?",
+    "award": {
+      "title": "3rd in the World for Ocean Therapy",
+      "description": "Recognition from the Aloha Award for our unique methodology and approach to therapy through the ocean."
+    },
+    "experience": {
+      "title": "5 years of the project",
+      "description": "Good Day's Family Surf Camp has been successfully hosting retreats and helping people transform."
+    },
+    "guests": {
+      "title": "Over 1000 guests",
+      "description": "More than a thousand people have already gained valuable experience and therapeutic benefits with us."
+    }
+  },
+  "footer": {
+    "title": "OCEANTHERAPY Contact Information",
+    "whatsapp": "WhatsApp: +38 067 933 9332",
+    "telegram": "Telegram: @kshisya13",
+    "contact": "Contact Us",
+    "copyright": "© 2025 OCEANTHERAPY. All rights reserved.",
+    "credits": "Created with ♡ for the ocean and the soul."
+  }
+} 
