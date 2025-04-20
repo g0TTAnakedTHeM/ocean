@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -125,7 +127,7 @@ const Hero = () => {
               animation: isLoaded && isVideoLoaded ? 'fadeIn 0.8s ease-out 0.6s both' : 'none'
             }}
           >
-            Забронювати місце зараз
+            {t('common.bookYourSpot')}
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="h-6 w-6 ml-2 transition-transform group-hover:translate-x-1" 
@@ -143,7 +145,7 @@ const Hero = () => {
               href="#about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/50 backdrop-blur-sm rounded-full text-ocean-800 font-medium hover:bg-white/70 transition-all duration-300 group"
             >
-              Дізнатись більше
+              {t('common.learnMore')}
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 className="h-5 w-5 transition-transform group-hover:translate-x-1" 

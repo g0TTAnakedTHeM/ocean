@@ -1,7 +1,10 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-apple-gray-50 border-t border-apple-gray-100 py-16 relative overflow-hidden">
       {/* Optional subtle background pattern - Apple style tends to be very minimal */}
@@ -23,16 +26,16 @@ const Footer = () => {
         {/* Final CTA */}
         <div className="text-center mb-20 max-w-3xl mx-auto fade-in-section">
           <h2 className="apple-headline text-3xl md:text-4xl text-white mb-6 bg-[#a0ccdb] p-6 rounded-xl">
-            Дозволь собі провести найкращій час з собою і подаруй собі справжню радість та нові відчуття.
+            {t('schedule.closingMessage')}
           </h2>
           <p className="apple-text text-apple-gray-500 mb-8">
-            Приєднуйтесь до унікального ретріту, який назавжди змінить ваше сприйняття себе та світу.
+            {t('contact.closingMessage')}
           </p>
           <a
             href="#pricing"
             className="inline-block bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white px-8 py-4 text-lg font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
           >
-            ХОЧУ І БРОНЮЮ
+            {t('common.iWantToBook')}
           </a>
         </div>
         
@@ -48,17 +51,17 @@ const Footer = () => {
           
           {/* Contact */}
           <div>
-            <h3 className="text-base font-medium text-apple-gray-800 mb-5">Контакти</h3>
+            <h3 className="text-base font-medium text-apple-gray-800 mb-5">{t('footer.contact')}</h3>
             <ul className="space-y-3">
               <li className="text-apple-gray-500">
-                WhatsApp: +38 067 933 9332
+                {t('footer.whatsapp')}
               </li>
               <li className="text-apple-gray-500">
-                Telegram: @kshisya13
+                {t('footer.telegram')}
               </li>
               <li>
                 <a href="#contact" className="text-apple-gray-500 hover:text-apple-blue transition-colors">
-                  Зв'язатися з нами
+                  {t('footer.contact')}
                 </a>
               </li>
             </ul>
@@ -93,12 +96,12 @@ const Footer = () => {
         {/* Copyright */}
         <div className="pt-6 mt-6 border-t border-apple-gray-200 text-center text-apple-gray-400 text-sm">
           <p>
-            © {new Date().getFullYear()} OCEANTHERAPY. Всі права захищені.
+            {t('footer.copyright')}
           </p>
           <p className="mt-2 flex items-center justify-center">
-            Створено з 
+            {t('footer.credits').split('♡')[0]}
             <Heart className="h-4 w-4 mx-1 text-apple-accent" />
-            для океану і душі
+            {t('footer.credits').split('♡')[1]}
           </p>
         </div>
       </div>
