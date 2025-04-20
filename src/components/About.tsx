@@ -1,7 +1,10 @@
 import React from 'react';
 import Divider from './ui/Divider';
+import { useTranslation } from '../hooks/useTranslation';
 
 const About = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="about" className="apple-section bg-white relative pb-8 mb-[-10px]">
       <div className="absolute inset-0 bg-white"></div>
@@ -16,7 +19,7 @@ const About = () => {
             />
           </div>
           <p className="apple-text mt-6 mb-6 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed font-light text-ocean-800">
-            7 днів відпочинку тільки для тебе, повного перезавантаження, нових і незабутніх емоцій, справжньої радості, ментального відновлення та піклування про внутрішній стан.
+            {t('services.retreatMoments.subtitle')}
           </p>
         </div>
       </div>

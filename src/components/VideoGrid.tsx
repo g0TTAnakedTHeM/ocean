@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import { GradientText } from './ui/GradientText';
+import { useTranslation } from '../hooks/useTranslation';
 
 const VideoGrid = () => {
+  const { t } = useTranslation();
   // Track which videos are visible and should play
   const [visibleVideos, setVisibleVideos] = useState<Record<number, boolean>>({});
   const [loadedVideos, setLoadedVideos] = useState<Record<number, boolean>>({});
@@ -134,7 +136,7 @@ const VideoGrid = () => {
               className="font-semibold"
               animate={true}
             >
-              Моменти ретріту
+              {t('services.retreatMoments.title')}
             </GradientText>
           </h2>
           <div className="flex justify-center my-10">
@@ -145,7 +147,7 @@ const VideoGrid = () => {
             />
           </div>
           <p className="text-xl md:text-2xl text-ocean-700/80 max-w-3xl mx-auto leading-relaxed mt-12 mb-4">
-            Яскраві спогади та емоції з наших океанічних пригод
+            {t('services.retreatMoments.description')}
           </p>
         </div>
         

@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Anchor, Sun, Home, Users, Plane, Car, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import '@/styles/location.css';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Location = () => {
+  const { t } = useTranslation();
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -209,7 +211,7 @@ const Location = () => {
         <div className="text-center fade-in-section">
           <h2 className="apple-title text-ocean-800">
             <MapPin className="w-8 h-8 mr-2 inline-block text-ocean-800" />
-            Де?
+            {t('location.title')}
           </h2>
           <div className="flex justify-center my-4">
             <img 
@@ -237,8 +239,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Балеал, Португалія</h3>
-                    <p className="text-sm opacity-90">Унікальний півострів з ідеальними умовами для серфінгу</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.baleal.title')}</h3>
+                    <p className="text-sm opacity-90">{t('location.baleal.description')}</p>
                   </div>
                 </div>
                 
@@ -256,8 +258,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Пляжі Балеалу</h3>
-                    <p className="text-sm opacity-90">Прекрасні пляжі для відпочинку і серфінгу</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.beaches.title')}</h3>
+                    <p className="text-sm opacity-90">{t('location.beaches.description')}</p>
                   </div>
                 </div>
                 
@@ -275,8 +277,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Атлантичний океан</h3>
-                    <p className="text-sm opacity-90">Ідеальні хвилі для серфінгу будь-якого рівня</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.ocean.title')}</h3>
+                    <p className="text-sm opacity-90">{t('location.ocean.description')}</p>
                   </div>
                 </div>
                 
@@ -294,8 +296,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Серфінг</h3>
-                    <p className="text-sm opacity-90">Популярний спорт на Балеалі для всіх рівнів</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.surfing.title')}</h3>
+                    <p className="text-sm opacity-90">{t('location.surfing.description')}</p>
                   </div>
                 </div>
                 
@@ -313,8 +315,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Закати на узбережжі</h3>
-                    <p className="text-sm opacity-90">Мальовничі вечори та атмосферні заходи сонця</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.sunsets.title')}</h3>
+                    <p className="text-sm opacity-90">{t('location.sunsets.description')}</p>
                   </div>
                 </div>
               </div>
@@ -352,39 +354,38 @@ const Location = () => {
             
             <div className="text-left space-y-6 px-4 mt-8">
               <h3 className="text-3xl font-semibold text-ocean-800">
-                Найкращий серф-спот Європи
+                {t('location.bestSpot.title')}
               </h3>
               <p className="text-lg text-apple-gray-700 leading-relaxed">
-                Балеал — це унікальне місце, де океан створює ідеальні умови для серфінгу цілий рік. 
-                Тут ви знайдете хвилі для будь-якого рівня підготовки, від початківців до професіоналів.
+                {t('location.bestSpot.description')}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 <div className="flex items-start space-x-3">
                   <Plane className="w-6 h-6 text-ocean-600 mt-1" />
                   <div>
-                    <h4 className="font-medium text-ocean-800">Легко дістатися</h4>
-                    <p className="text-apple-gray-600">Прямі рейси лоукостери в Ліссабон та швидкісні трансфери на Балеал</p>
+                    <h4 className="font-medium text-ocean-800">{t('location.easyToReach.title')}</h4>
+                    <p className="text-apple-gray-600">{t('location.easyToReach.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Car className="w-6 h-6 text-ocean-600 mt-1" />
                   <div>
-                    <h4 className="font-medium text-ocean-800">Зручна логістика</h4>
-                    <p className="text-apple-gray-600">Трансфер від аеропорту до місця проживання</p>
+                    <h4 className="font-medium text-ocean-800">{t('location.convenientLogistics.title')}</h4>
+                    <p className="text-apple-gray-600">{t('location.convenientLogistics.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Clock className="w-6 h-6 text-ocean-600 mt-1" />
                   <div>
-                    <h4 className="font-medium text-ocean-800">Ідеальний час</h4>
-                    <p className="text-apple-gray-600">Комфортна погода та хвилі цілий рік</p>
+                    <h4 className="font-medium text-ocean-800">{t('location.perfectTiming.title')}</h4>
+                    <p className="text-apple-gray-600">{t('location.perfectTiming.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Home className="w-6 h-6 text-ocean-600 mt-1" />
                   <div>
-                    <h4 className="font-medium text-ocean-800">Все поруч</h4>
-                    <p className="text-apple-gray-600">Океан, кафе, магазини в пішій доступності</p>
+                    <h4 className="font-medium text-ocean-800">{t('location.everythingNearby.title')}</h4>
+                    <p className="text-apple-gray-600">{t('location.everythingNearby.description')}</p>
                   </div>
                 </div>
               </div>
@@ -394,7 +395,7 @@ const Location = () => {
           {/* Retreat Program Showcase */}
           <div className="mt-16 text-center">
             <h2 className="text-3xl font-semibold text-ocean-800 mb-8">
-              Унікальна програма ретриту
+              {t('program.title')}
             </h2>
 
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -412,8 +413,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Комфортне проживання</h3>
-                    <p className="text-sm opacity-90">Сучасні номери для відпочинку після активного дня</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.accommodations.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.accommodations.description')}</p>
                   </div>
                 </div>
                 
@@ -430,8 +431,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зручна інфраструктура</h3>
-                    <p className="text-sm opacity-90">Всі необхідні умови для комфортного перебування</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.infrastructure.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.infrastructure.description')}</p>
                   </div>
                 </div>
                 
@@ -448,8 +449,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Групові практики</h3>
-                    <p className="text-sm opacity-90">Цінний досвід і підтримка у колі однодумців</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.groupPractices.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.groupPractices.description')}</p>
                   </div>
                 </div>
                 
@@ -466,8 +467,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зона відпочинку</h3>
-                    <p className="text-sm opacity-90">Місце для спілкування та обміну враженнями</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.relaxationZone.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.relaxationZone.description')}</p>
                   </div>
                 </div>
                 
@@ -484,8 +485,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Зона релаксації</h3>
-                    <p className="text-sm opacity-90">Затишні місця для відпочинку та релаксації</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.relaxationArea.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.relaxationArea.description')}</p>
                   </div>
                 </div>
                 
@@ -502,8 +503,8 @@ const Location = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">Здорове харчування</h3>
-                    <p className="text-sm opacity-90">Смачні та корисні сніданки для енергії на весь день</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('program.healthyNutrition.title')}</h3>
+                    <p className="text-sm opacity-90">{t('program.healthyNutrition.description')}</p>
                   </div>
                 </div>
               </div>
