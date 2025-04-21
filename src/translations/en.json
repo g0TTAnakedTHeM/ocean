@@ -184,13 +184,13 @@
     "description": "You are the most valuable thing you have! Your condition, your mental health and well-being.",
     "individual": {
       "title": "Individual Participation",
-      "price": "1850 €",
+      "price": "1850 € / per person",
       "description": "Full package with individual accommodation",
       "button": "Book Your Spot"
     },
     "double": {
-      "title": "Double Participation",
-      "price": "1550 €",
+      "title": "Participation for Two",
+      "price": "1550 € / per each",
       "description": "For couples or friends traveling together",
       "button": "Book Your Spot",
       "popular": "Most Popular"
@@ -227,8 +227,10 @@
     "whatsapp": "WhatsApp: +38 067 933 9332",
     "telegram": "Telegram: @kshisya13",
     "contact": "Contact Us",
-    "copyright": "© 2025 OCEANTHERAPY. All rights reserved.",
-    "credits": "Created with ♡ for the ocean and the soul."
+    "copyright": "© 2023 OCEANTHERAPY. All rights reserved.",
+    "credits": "Created with ♡ for the ocean and soul.",
+    "firstSentence": "Allow yourself to spend the best time with yourself and gift yourself true joy and new sensations.",
+    "secondSentence": "Join this unique retreat that will forever change your perception of yourself and the world."
   },
   "seo": {
     "title": "OCEANTHERAPY - Ocean Therapy for Restoration and Harmony",

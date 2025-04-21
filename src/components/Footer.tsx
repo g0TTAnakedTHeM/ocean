@@ -26,10 +26,10 @@ const Footer = () => {
         {/* Final CTA */}
         <div className="text-center mb-20 max-w-3xl mx-auto fade-in-section">
           <h2 className="apple-headline text-3xl md:text-4xl text-white mb-6 bg-[#a0ccdb] p-6 rounded-xl">
-            {t('schedule.closingMessage')}
+            {t('footer.firstSentence')}
           </h2>
-          <p className="apple-text text-apple-gray-500 mb-8">
-            {t('contact.closingMessage')}
+          <p className="apple-text text-apple-gray-700 text-xl mt-6 mb-8">
+            {t('footer.secondSentence')}
           </p>
           <a
             href="#pricing"
