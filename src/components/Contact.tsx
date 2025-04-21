@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Mail, Phone, User, Calendar } from 'lucide-react';
 import { trackLead } from './FacebookPixel';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [formState, setFormState] = useState({
@@ -247,10 +249,21 @@ const Contact = () => {
                       className="block w-full pl-12 pr-4 py-3 border border-ocean-100 rounded-lg focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all duration-200 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.5em_1.5em] bg-[right_0.5rem_center] bg-no-repeat"
                     >
                       <option value="">-- {t('common.selectDate')} --</option>
-                      <option value="01-08 ТРАВНЯ">01-08 ТРАВНЯ</option>
-                      <option value="30 ТРАВНЯ - 06 ЧЕРВНЯ">30 ТРАВНЯ - 06 ЧЕРВНЯ</option>
-                      <option value="03-10 ЖОВТНЯ">03-10 ЖОВТНЯ</option>
-                      <option value="07-14 ЛИСТОПАДА">07-14 ЛИСТОПАДА</option>
+                      {language === 'ru' ? (
+                        <>
+                          <option value="01-08 МАЯ">01-08 МАЯ</option>
+                          <option value="30 МАЯ - 06 ИЮНЯ">30 МАЯ - 06 ИЮНЯ</option>
+                          <option value="03-10 ОКТЯБРЯ">03-10 ОКТЯБРЯ</option>
+                          <option value="07-14 НОЯБРЯ">07-14 НОЯБРЯ</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="01-08 ТРАВНЯ">01-08 ТРАВНЯ</option>
+                          <option value="30 ТРАВНЯ - 06 ЧЕРВНЯ">30 ТРАВНЯ - 06 ЧЕРВНЯ</option>
+                          <option value="03-10 ЖОВТНЯ">03-10 ЖОВТНЯ</option>
+                          <option value="07-14 ЛИСТОПАДА">07-14 ЛИСТОПАДА</option>
+                        </>
+                      )}
                     </select>
                   </div>
                 </div>
