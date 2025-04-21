@@ -38,7 +38,7 @@ const Pricing = () => {
             <div className="text-center">
               <h3 className="text-2xl font-medium text-ocean-800 mb-2">{t('pricing.individual.title')}</h3>
               <div className="mt-4 flex items-center justify-center">
-                <span className="text-5xl font-cormorant font-medium tracking-tight text-ocean-800">{t('pricing.individual.price')}</span>
+                <span className="text-2xl font-cormorant font-medium tracking-tight text-ocean-800">{t('pricing.individual.price')}</span>
               </div>
               <p className="mt-4 text-sm text-ocean-800">
                 {t('pricing.individual.description')}
@@ -79,7 +79,7 @@ const Pricing = () => {
             <div className="text-center">
               <h3 className="text-2xl font-medium text-ocean-800 mb-2">{t('pricing.double.title')}</h3>
               <div className="mt-4 flex items-center justify-center">
-                <span className="text-5xl font-cormorant font-medium tracking-tight text-ocean-800">{t('pricing.double.price')}</span>
+                <span className="text-2xl font-cormorant font-medium tracking-tight text-ocean-800">{t('pricing.double.price')}</span>
               </div>
               <p className="mt-4 text-sm text-ocean-800">
                 {t('pricing.double.description')}
