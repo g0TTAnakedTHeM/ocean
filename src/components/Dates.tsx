@@ -8,7 +8,16 @@ const Dates = () => {
   const { language } = useLanguage();
   
   const getDateTitle = (ukTitle, enTitle) => {
-    return language === 'en' ? enTitle : ukTitle;
+    if (language === 'en') return enTitle;
+    if (language === 'ru') {
+      // Convert Ukrainian month names to Russian
+      return ukTitle
+        .replace('ТРАВНЯ', 'МАЯ')
+        .replace('ЧЕРВНЯ', 'ИЮНЯ')
+        .replace('ЖОВТНЯ', 'ОКТЯБРЯ')
+        .replace('ЛИСТОПАДА', 'НОЯБРЯ');
+    }
+    return ukTitle;
   };
   
   const retreatDates = [
