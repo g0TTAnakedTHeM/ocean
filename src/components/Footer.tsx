@@ -68,7 +68,7 @@ const Footer = () => {
             
             <div className="mt-6 flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/oceantherapy.surf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="h-8 w-8 rounded-full bg-apple-gray-200 flex items-center justify-center text-apple-gray-800 hover:bg-apple-gray-300 transition-colors"
@@ -79,7 +79,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="h-8 w-8 rounded-full bg-apple-gray-200 flex items-center justify-center text-apple-gray-800 hover:bg-apple-gray-300 transition-colors"

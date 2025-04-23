@@ -256,6 +256,13 @@ const Contact = () => {
                           <option value="03-10 ОКТЯБРЯ">03-10 ОКТЯБРЯ</option>
                           <option value="07-14 НОЯБРЯ">07-14 НОЯБРЯ</option>
                         </>
+                      ) : language === 'en' ? (
+                        <>
+                          <option value="MAY 01-08">MAY 01-08</option>
+                          <option value="MAY 30 - JUNE 06">MAY 30 - JUNE 06</option>
+                          <option value="OCTOBER 03-10">OCTOBER 03-10</option>
+                          <option value="NOVEMBER 07-14">NOVEMBER 07-14</option>
+                        </>
                       ) : (
                         <>
                           <option value="01-08 ТРАВНЯ">01-08 ТРАВНЯ</option>
