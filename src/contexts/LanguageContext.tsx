@@ -10,21 +10,21 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default to English instead of Ukrainian
-  const [language, setLanguage] = useState<Language>('en');
+  // Default to Ukrainian
+  const [language, setLanguage] = useState<Language>('uk');
 
   useEffect(() => {
-    // Get language from localStorage or default to English
+    // Get language from localStorage or default to Ukrainian
     const savedLanguage = localStorage.getItem('language') as Language;
     if (savedLanguage && ['en', 'uk', 'ru'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
     } else {
       // If no valid language in localStorage, try to get browser language
       const browserLang = navigator.language.split('-')[0];
-      if (browserLang === 'uk' || browserLang === 'ru') {
+      if (browserLang === 'en' || browserLang === 'ru') {
         setLanguage(browserLang as Language);
       }
-      // If not Ukrainian or Russian, keep English as default
+      // If not English or Russian, keep Ukrainian as default
     }
   }, []);
 

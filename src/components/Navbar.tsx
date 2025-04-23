@@ -81,38 +81,90 @@ const Navbar = () => {
               </a>
             ))}
             
-            {/* Language Switcher */}
+            {/* Desktop Language Switcher */}
+            <div className="flex items-center">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className={`flex items-center space-x-1 px-3 py-1 rounded-full border ${
+                      isScrolled 
+                        ? 'text-apple-gray-800 hover:text-apple-blue border-apple-gray-200' 
+                        : 'text-white hover:text-white border-white/30'
+                    }`}
+                  >
+                    <Globe className="h-3.5 w-3.5 mr-1" />
+                    <span className="text-sm font-medium uppercase">{language}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="min-w-[120px]">
+                  <DropdownMenuItem 
+                    className={`flex justify-between items-center ${language === 'en' ? 'font-medium text-apple-blue' : ''}`}
+                    onClick={() => handleLanguageChange('en')}
+                  >
+                    <span>{t('nav.english')}</span>
+                    {language === 'en' && <div className="h-1.5 w-1.5 rounded-full bg-apple-blue"></div>}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    className={`flex justify-between items-center ${language === 'uk' ? 'font-medium text-apple-blue' : ''}`}
+                    onClick={() => handleLanguageChange('uk')}
+                  >
+                    <span>{t('nav.ukrainian')}</span>
+                    {language === 'uk' && <div className="h-1.5 w-1.5 rounded-full bg-apple-blue"></div>}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    className={`flex justify-between items-center ${language === 'ru' ? 'font-medium text-apple-blue' : ''}`}
+                    onClick={() => handleLanguageChange('ru')}
+                  >
+                    <span>{t('nav.russian')}</span>
+                    {language === 'ru' && <div className="h-1.5 w-1.5 rounded-full bg-apple-blue"></div>}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
+          
+          {/* Mobile menu button and language selector */}
+          <div className="flex md:hidden items-center space-x-2">
+            {/* Mobile Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  size="icon"
-                  className={`${
+                  size="sm"
+                  className={`flex items-center space-x-1 py-1 px-2 rounded-full border ${
                     isScrolled 
-                      ? 'text-apple-gray-800 hover:text-apple-blue' 
-                      : 'text-white/90 hover:text-white'
+                      ? 'text-apple-gray-800 border-apple-gray-200' 
+                      : 'text-white border-white/30'
                   }`}
                 >
-                  <Globe className="h-4 w-4" />
-                  <span className="sr-only">{t('nav.switchLanguage')}</span>
+                  <Globe className="h-3 w-3" />
+                  <span className="text-xs font-medium uppercase">{language}</span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => handleLanguageChange('en')}>
-                  {t('nav.english')}
+              <DropdownMenuContent align="end" className="min-w-[100px]">
+                <DropdownMenuItem 
+                  className={language === 'en' ? 'font-medium text-apple-blue' : ''}
+                  onClick={() => handleLanguageChange('en')}
+                >
+                  English
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleLanguageChange('uk')}>
-                  {t('nav.ukrainian')}
+                <DropdownMenuItem 
+                  className={language === 'uk' ? 'font-medium text-apple-blue' : ''}
+                  onClick={() => handleLanguageChange('uk')}
+                >
+                  Українська
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleLanguageChange('ru')}>
-                  {t('nav.russian')}
+                <DropdownMenuItem 
+                  className={language === 'ru' ? 'font-medium text-apple-blue' : ''}
+                  onClick={() => handleLanguageChange('ru')}
+                >
+                  Русский
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
+
+            {/* Mobile menu button */}
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -149,43 +201,6 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          
-          {/* Mobile Language Switcher */}
-          <div className="px-3 py-3">
-            <div className="text-sm font-medium text-apple-gray-800 mb-2">{t('nav.language')}</div>
-            <div className="flex flex-wrap gap-2">
-              <Button
-                variant={language === 'en' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => {
-                  handleLanguageChange('en');
-                  setIsMenuOpen(false);
-                }}
-              >
-                EN
-              </Button>
-              <Button
-                variant={language === 'uk' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => {
-                  handleLanguageChange('uk');
-                  setIsMenuOpen(false);
-                }}
-              >
-                UA
-              </Button>
-              <Button
-                variant={language === 'ru' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => {
-                  handleLanguageChange('ru');
-                  setIsMenuOpen(false);
-                }}
-              >
-                RU
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </nav>
