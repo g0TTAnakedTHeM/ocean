@@ -43,38 +43,37 @@ const Contact = () => {
     
     setLoading(true);
     
-    // Create a hidden form and submit it
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
-    form.target = '_blank'; // Open response in new tab
-    
-    // Add each field separately instead of as a JSON string
-    Object.entries(formState).forEach(([key, value]) => {
-      const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
-      hiddenField.name = key; // Use the actual field name
-      hiddenField.value = value; // Use the raw value
-      form.appendChild(hiddenField);
-    });
-    
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-    
-    console.log('Form data:', formState);
-    
-    setFormSubmitted(true);
-    setLoading(false);
-    
-    // Reset form
-    setFormState({
-      name: '',
-      email: '',
-      phone: '',
-      dates: '',
-      message: '',
-    });
+    try {
+      // Send data as JSON
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      
+      console.log('Form data submitted successfully:', formState);
+      setFormSubmitted(true);
+      
+      // Reset form
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        dates: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      setError(t('common.errorMessage'));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
