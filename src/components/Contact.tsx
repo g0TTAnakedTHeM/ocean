@@ -49,27 +49,20 @@ const Contact = () => {
     form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
     form.target = '_blank'; // Open response in new tab
     
-    // Create the JSON data
-    const jsonData = {
-      name: formState.name,
-      email: formState.email,
-      phone: formState.phone,
-      dates: formState.dates,
-      message: formState.message
-    };
-    
-    // Add a hidden input for the JSON data
-    const hiddenField = document.createElement('input');
-    hiddenField.type = 'hidden';
-    hiddenField.name = 'json';
-    hiddenField.value = JSON.stringify(jsonData);
-    form.appendChild(hiddenField);
+    // Add each field separately instead of as a JSON string
+    Object.entries(formState).forEach(([key, value]) => {
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key; // Use the actual field name
+      hiddenField.value = value; // Use the raw value
+      form.appendChild(hiddenField);
+    });
     
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
     
-    console.log('Form data:', jsonData);
+    console.log('Form data:', formState);
     
     setFormSubmitted(true);
     setLoading(false);
