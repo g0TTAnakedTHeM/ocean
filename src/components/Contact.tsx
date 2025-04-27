@@ -59,7 +59,7 @@ const Contact = () => {
     try {
       // Create a standard HTML form
       const form = document.createElement('form');
-      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
+      form.action = 'https://script.google.com/macros/s/AKfycbwGA6aVoUrwMuyRWZXFA6mgexlf2KRbjasAonpqHJjw7u7PaFTWDDwF1j0FzahJfat3/exec';
       form.method = 'POST';
       form.target = 'hidden-form-iframe'; // Use the iframe as target
       
