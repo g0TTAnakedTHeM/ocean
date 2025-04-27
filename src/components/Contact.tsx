@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Mail, Phone, User, Calendar } from 'lucide-react';
 import { trackLead } from './FacebookPixel';
 import { useTranslation } from '../hooks/useTranslation';
@@ -20,6 +20,19 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [requiredFields, setRequiredFields] = useState<string[]>([]);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Create an invisible iframe for form submission
+  useEffect(() => {
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden-form-iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    return () => {
+      document.body.removeChild(iframe);
+    };
+  }, []);
 
   const validateForm = () => {
     const requiredFieldsList: string[] = [];
@@ -44,23 +57,42 @@ const Contact = () => {
     setLoading(true);
     
     try {
-      // Send data as JSON
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formState),
+      // Create a standard HTML form
+      const form = document.createElement('form');
+      form.action = 'https://script.google.com/macros/s/AKfycbwlClieKK2iH7azewrZotEBL5I_pjn4PHEUuwR8pnjrHwIQ2vjIml-UpEuiyIsegswh/exec';
+      form.method = 'POST';
+      form.target = 'hidden-form-iframe'; // Use the iframe as target
+      
+      // Add form fields one by one directly (no JSON)
+      const fieldsToAdd = {
+        name: formState.name,
+        email: formState.email,
+        phone: formState.phone,
+        dates: formState.dates,
+        message: formState.message
+      };
+      
+      // Create input elements for each field
+      Object.entries(fieldsToAdd).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
       });
       
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
+      // Append and submit the form
+      document.body.appendChild(form);
+      console.log('Submitting data:', fieldsToAdd);
+      form.submit();
       
-      console.log('Form data submitted successfully:', formState);
+      // Clean up
+      setTimeout(() => {
+        document.body.removeChild(form);
+      }, 500);
+      
+      // Show success and reset the form
       setFormSubmitted(true);
-      
-      // Reset form
       setFormState({
         name: '',
         email: '',
@@ -118,6 +150,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="apple-section bg-white">
+      {/* Hidden iframe for form submission */}
+      <iframe ref={iframeRef} name="hidden-form-iframe" style={{ display: 'none' }}></iframe>
+      
       <div className="apple-container max-w-3xl">
         <div className="text-center mb-16 fade-in-section">
           <h2 className="apple-title text-ocean-800">
