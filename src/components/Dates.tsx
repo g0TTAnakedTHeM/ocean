@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, Star } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -35,42 +35,50 @@ const Dates = () => {
     {
       country: 'portugal' as const,
       title: getDateTitle('28 БЕРЕЗНЯ – 4 КВІТНЯ', 'MARCH 28 – APRIL 4'),
-      availableSpots: 6
+      availableSpots: 6,
+      isLimited: true
     },
     {
       country: 'azores' as const,
       title: getDateTitle('11 – 18 КВІТНЯ', 'APRIL 11 – 18'),
-      availableSpots: 5
+      availableSpots: 5,
+      isLimited: false
     },
     {
       country: 'portugal' as const,
       title: getDateTitle('7 – 14 ТРАВНЯ', 'MAY 7 – 14'),
-      availableSpots: 6
+      availableSpots: 6,
+      isLimited: false
     },
     {
       country: 'france' as const,
       title: getDateTitle('29 ТРАВНЯ – 5 ЧЕРВНЯ', 'MAY 29 – JUNE 5'),
-      availableSpots: 8
+      availableSpots: 8,
+      isLimited: true
     },
     {
       country: 'france' as const,
       title: getDateTitle('3 – 10 ВЕРЕСНЯ', 'SEPTEMBER 3 – 10'),
-      availableSpots: 8
+      availableSpots: 8,
+      isLimited: false
     },
     {
       country: 'portugal' as const,
       title: getDateTitle('25 ВЕРЕСНЯ – 2 ЖОВТНЯ', 'SEPTEMBER 25 – OCTOBER 2'),
-      availableSpots: 6
+      availableSpots: 6,
+      isLimited: true
     },
     {
       country: 'portugal' as const,
       title: getDateTitle('3 – 10 ЖОВТНЯ', 'OCTOBER 3 – 10'),
-      availableSpots: 5
+      availableSpots: 5,
+      isLimited: false
     },
     {
       country: 'azores' as const,
       title: getDateTitle('7 – 14 ЛИСТОПАДА', 'NOVEMBER 7 – 14'),
-      availableSpots: 6
+      availableSpots: 6,
+      isLimited: true
     }
   ];
 
@@ -96,7 +104,15 @@ const Dates = () => {
               className="fade-in-section"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="ocean-card h-full flex flex-col p-6 transform transition-all duration-300 hover:scale-[1.03] rounded-2xl overflow-hidden bg-[#a0ccdb]">
+              <div className={`ocean-card h-full flex flex-col p-6 pt-8 transform transition-all duration-300 hover:scale-[1.03] rounded-2xl relative ${date.isLimited ? 'bg-gradient-to-br from-[#a0ccdb] to-[#8ebfcf] ring-2 ring-amber-400/50' : 'bg-[#a0ccdb]'}`}>
+                {date.isLimited && (
+                  <div className="absolute top-2 right-2 z-10">
+                    <div className="flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-medium px-2 py-1 rounded-full shadow-lg">
+                      <Star className="w-2.5 h-2.5 fill-white" />
+                      <span>Special available</span>
+                    </div>
+                  </div>
+                )}
                 <div className="mb-4">
                   <div className="text-xl font-semibold text-white">{getCountryName(date.country)}</div>
                 </div>
