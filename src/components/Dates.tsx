@@ -33,13 +33,13 @@ const Dates = () => {
   
   const retreatDates = [
     {
-      country: 'azores' as const,
+      country: 'portugal' as const,
       title: getDateTitle('28 БЕРЕЗНЯ – 4 КВІТНЯ', 'MARCH 28 – APRIL 4'),
       availableSpots: 6
     },
     {
-      country: 'portugal' as const,
-      title: getDateTitle('7 – 14 КВІТНЯ', 'APRIL 7 – 14'),
+      country: 'azores' as const,
+      title: getDateTitle('11 – 18 КВІТНЯ', 'APRIL 11 – 18'),
       availableSpots: 5
     },
     {

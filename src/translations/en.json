@@ -205,9 +205,9 @@
     "description": "Every day of The Oceantherapy program is an unforgettable journey with yourself and for yourself. It's about new experiences, fresh impressions, and meaningful self-discovery.",
     "day1": {
       "title": "Day 1 – Arrival & Welcome",
-      "arrival": "Arrival at Lisbon Airport, transfer to Baleal, and hotel check-in.",
-      "tour": "Tour of the place of power Baleal. Meet & greet with the group and team.",
-      "dinner": "Sunset and a welcome dinner featuring traditional Portuguese cuisine."
+      "arrival": "Arrival at the airport, transfer to the hotel, and check-in.",
+      "tour": "Tour of the place of power. Meet & greet with the group and team.",
+      "dinner": "Sunset and a welcome dinner featuring traditional local cuisine."
     },
     "days2to7": {
       "title": "Days 2–7",
@@ -222,7 +222,7 @@
       "title": "Day 8",
       "breakfast": "Group Breakfast",
       "wishes": "Group Hug & Exchange of Wishes",
-      "checkout": "Check-out & Transfer to Lisbon Airport"
+      "checkout": "Check-out & Transfer to the Airport"
     },
     "quote": "The Oceantherapy – a journey toward mindfulness and harmony of spirit, body and mind.",
     "closingMessage": "Allow yourself to spend the best time with yourself and gift yourself true joy and new sensations. Join this unique retreat that will forever change your perception of yourself and the world."
