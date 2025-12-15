@@ -88,6 +88,54 @@
       "title": "Baleal, Portugal",
       "description": "A unique peninsula with perfect conditions for surfing"
     },
+    "france": {
+      "title": "Hossegor, France",
+      "description": "European surfing capital with royal forests and majestic dunes",
+      "bestSpot": {
+        "title": "Surfing Capital of Europe",
+        "description": "Hossegor, France, is a unique place in the Landes region, known for its royal forests and majestic dunes. Surfing on sandy beaches where the waves of the Atlantic meet the green forests is a highlight. The area is famous not only for its wild natural beauty but also for its delicious cuisine, where you can enjoy local delicacies."
+      },
+      "easyToReach": {
+        "title": "Easy to Reach",
+        "description": "Direct flights to Biarritz or Bordeaux with convenient transfers"
+      },
+      "convenientLogistics": {
+        "title": "Convenient Logistics",
+        "description": "Airport transfer to your accommodation"
+      },
+      "perfectTiming": {
+        "title": "Perfect Timing",
+        "description": "Best waves from September to November"
+      },
+      "everythingNearby": {
+        "title": "French Charm",
+        "description": "Exquisite cuisine, wine, and tranquil atmosphere"
+      }
+    },
+    "azores": {
+      "title": "São Miguel, Azores",
+      "description": "Island of eternal spring with perfect waves and volcanic beaches",
+      "bestSpot": {
+        "title": "Island of Eternal Spring",
+        "description": "São Miguel, the largest island of the Azores, captivates with its perfect waves and picturesque beaches. It offers optimal conditions for surfing where the powerful Atlantic waves provide true therapy for the body and soul. The island impresses with its natural beauty: green hills, lakes, and volcanic beaches create an unforgettable atmosphere."
+      },
+      "easyToReach": {
+        "title": "Easy to Reach",
+        "description": "Direct flights from Lisbon and other European cities"
+      },
+      "convenientLogistics": {
+        "title": "Convenient Logistics",
+        "description": "Transfer from Ponta Delgada Airport"
+      },
+      "perfectTiming": {
+        "title": "Perfect Timing",
+        "description": "Comfortable climate and waves year-round"
+      },
+      "everythingNearby": {
+        "title": "Natural Wonders",
+        "description": "Hot springs, lakes, and volcanic landscapes"
+      }
+    },
     "surfing": {
       "title": "Surfing",
       "description": "A popular sport on Baleal for all skill levels"
@@ -184,16 +232,23 @@
     "description": "You are the most valuable thing you have! Your condition, your mental health and well-being.",
     "individual": {
       "title": "Individual Participation",
-      "price": "1850 € / per person",
+      "price": "2150 € / per person",
       "description": "Full package with individual accommodation",
       "button": "Book Your Spot"
     },
     "double": {
       "title": "Participation for Two",
-      "price": "1550 € / per each",
+      "price": "1650 € / per each",
       "description": "For couples or friends traveling together",
       "button": "Book Your Spot",
       "popular": "Most Popular"
+    },
+    "limited": {
+      "title": "Limited Edition",
+      "price": "TBA",
+      "description": "Exclusive premium experience with additional perks",
+      "button": "Book Your Spot",
+      "badge": "Limited"
     },
     "included": {
       "title": "What's included",

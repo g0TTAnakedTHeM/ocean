@@ -13,7 +13,7 @@ const Location = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const retreatSliderRef = useRef<HTMLDivElement>(null);
   
-  const totalSlides = 5; // Total number of slides
+  const totalSlides = 3; // Total number of destination slides (Baleal, France, Azores)
   const totalRetreatSlides = 6; // Total number of retreat slides
   
   // Handle next and previous slide navigation
@@ -221,21 +221,22 @@ const Location = () => {
             />
           </div>
           
-          {/* Main location showcase */}
+          {/* Main location showcase - 3 Destinations */}
           <div className="mt-12">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <div className="overflow-x-auto hide-scrollbar snap-x snap-mandatory touch-pan-x flex w-full" ref={sliderRef}>
+                {/* Baleal, Portugal */}
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
                     src="/assets/images/optimized/baleal-upscaled-desktop.jpg" 
                     srcSet="/assets/images/optimized/baleal-upscaled-desktop.jpg 1024w"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
-                    alt="Балеал з висоти"
+                    alt="Балеал, Португалія"
                   />
                   <img 
                     src="/assets/images/optimized/baleal-upscaled-mobile.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
-                    alt="Балеал з висоти"
+                    alt="Балеал, Португалія"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
@@ -244,79 +245,41 @@ const Location = () => {
                   </div>
                 </div>
                 
+                {/* Hossegor, France */}
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/17-upscaled-desktop.jpg"
-                    srcSet="/assets/images/optimized/17-upscaled-desktop.jpg 1024w"
+                    src="/assets/images/france-hossegor.jpg"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
-                    alt="Пляж Балеалу" 
+                    alt="Осегор, Франція"
                   />
                   <img 
-                    src="/assets/images/optimized/17-upscaled-mobile.jpg" 
+                    src="/assets/images/france-hossegor.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
-                    alt="Пляж Балеалу"
+                    alt="Осегор, Франція"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.beaches.title')}</h3>
-                    <p className="text-sm opacity-90">{t('location.beaches.description')}</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.france.title')}</h3>
+                    <p className="text-sm opacity-90 line-clamp-3">{t('location.france.description')}</p>
                   </div>
                 </div>
                 
+                {/* São Miguel, Azores */}
                 <div className="relative flex-none w-full flex-shrink-0 snap-center">
                   <img 
-                    src="/assets/images/optimized/DSC_3165-upscaled-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_3165-upscaled-desktop.jpg 1024w"
+                    src="/assets/images/azores-sao-miguel.jpg"
                     className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
-                    alt="Океанські хвилі"
+                    alt="Сан-Мігель, Азори"
                   />
                   <img 
-                    src="/assets/images/optimized/DSC_3165-upscaled-mobile.jpg" 
+                    src="/assets/images/azores-sao-miguel.jpg" 
                     className="w-full h-[280px] object-cover md:hidden"
-                    alt="Океанські хвилі"
+                    alt="Сан-Мігель, Азори"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.ocean.title')}</h3>
-                    <p className="text-sm opacity-90">{t('location.ocean.description')}</p>
-                  </div>
-                </div>
-                
-                <div className="relative flex-none w-full flex-shrink-0 snap-center">
-                  <img 
-                    src="/assets/images/optimized/DSC_7136%202-desktop.jpg"
-                    srcSet="/assets/images/optimized/DSC_7136%202-desktop.jpg 1024w"
-                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
-                    alt="Серфінг на Балеалі"
-                  />
-                  <img 
-                    src="/assets/images/optimized/DSC_7136%202-mobile.jpg" 
-                    className="w-full h-[280px] object-cover md:hidden"
-                    alt="Серфінг на Балеалі"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.surfing.title')}</h3>
-                    <p className="text-sm opacity-90">{t('location.surfing.description')}</p>
-                  </div>
-                </div>
-                
-                <div className="relative flex-none w-full flex-shrink-0 snap-center">
-                  <img 
-                    src="/assets/images/optimized/IMG_2830%202-desktop.jpg"
-                    srcSet="/assets/images/optimized/IMG_2830%202-desktop.jpg 1024w"
-                    className="w-full h-[350px] md:h-[450px] object-cover hidden md:block"
-                    alt="Вечір на Балеалі"
-                  />
-                  <img 
-                    src="/assets/images/optimized/IMG_2830%202-mobile.jpg" 
-                    className="w-full h-[280px] object-cover md:hidden"
-                    alt="Вечір на Балеалі"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.sunsets.title')}</h3>
-                    <p className="text-sm opacity-90">{t('location.sunsets.description')}</p>
+                    <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2">{t('location.azores.title')}</h3>
+                    <p className="text-sm opacity-90 line-clamp-3">{t('location.azores.description')}</p>
                   </div>
                 </div>
               </div>
@@ -352,43 +315,130 @@ const Location = () => {
           </div>
         </div>
         
-            <div className="text-left space-y-6 px-4 mt-8">
-              <h3 className="text-3xl font-semibold text-ocean-800">
-                {t('location.bestSpot.title')}
-              </h3>
-              <p className="text-lg text-apple-gray-700 leading-relaxed">
-                {t('location.bestSpot.description')}
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="flex items-start space-x-3">
-                  <Plane className="w-6 h-6 text-ocean-600 mt-1" />
-                  <div>
-                    <h4 className="font-medium text-ocean-800">{t('location.easyToReach.title')}</h4>
-                    <p className="text-apple-gray-600">{t('location.easyToReach.description')}</p>
+            {/* Dynamic description based on current slide */}
+            <div className="text-left space-y-6 px-4 mt-8 transition-all duration-300">
+              {currentSlide === 0 && (
+                <>
+                  <h3 className="text-3xl font-semibold text-ocean-800">
+                    {t('location.bestSpot.title')}
+                  </h3>
+                  <p className="text-lg text-apple-gray-700 leading-relaxed">
+                    {t('location.bestSpot.description')}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="flex items-start space-x-3">
+                      <Plane className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.easyToReach.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.easyToReach.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Car className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.convenientLogistics.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.convenientLogistics.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Clock className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.perfectTiming.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.perfectTiming.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Home className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.everythingNearby.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.everythingNearby.description')}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Car className="w-6 h-6 text-ocean-600 mt-1" />
-                  <div>
-                    <h4 className="font-medium text-ocean-800">{t('location.convenientLogistics.title')}</h4>
-                    <p className="text-apple-gray-600">{t('location.convenientLogistics.description')}</p>
+                </>
+              )}
+              
+              {currentSlide === 1 && (
+                <>
+                  <h3 className="text-3xl font-semibold text-ocean-800">
+                    {t('location.france.bestSpot.title')}
+                  </h3>
+                  <p className="text-lg text-apple-gray-700 leading-relaxed">
+                    {t('location.france.bestSpot.description')}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="flex items-start space-x-3">
+                      <Plane className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.france.easyToReach.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.france.easyToReach.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Car className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.france.convenientLogistics.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.france.convenientLogistics.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Clock className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.france.perfectTiming.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.france.perfectTiming.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Home className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.france.everythingNearby.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.france.everythingNearby.description')}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Clock className="w-6 h-6 text-ocean-600 mt-1" />
-                  <div>
-                    <h4 className="font-medium text-ocean-800">{t('location.perfectTiming.title')}</h4>
-                    <p className="text-apple-gray-600">{t('location.perfectTiming.description')}</p>
+                </>
+              )}
+              
+              {currentSlide === 2 && (
+                <>
+                  <h3 className="text-3xl font-semibold text-ocean-800">
+                    {t('location.azores.bestSpot.title')}
+                  </h3>
+                  <p className="text-lg text-apple-gray-700 leading-relaxed">
+                    {t('location.azores.bestSpot.description')}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="flex items-start space-x-3">
+                      <Plane className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.azores.easyToReach.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.azores.easyToReach.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Car className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.azores.convenientLogistics.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.azores.convenientLogistics.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Clock className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.azores.perfectTiming.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.azores.perfectTiming.description')}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Home className="w-6 h-6 text-ocean-600 mt-1" />
+                      <div>
+                        <h4 className="font-medium text-ocean-800">{t('location.azores.everythingNearby.title')}</h4>
+                        <p className="text-apple-gray-600">{t('location.azores.everythingNearby.description')}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Home className="w-6 h-6 text-ocean-600 mt-1" />
-                  <div>
-                    <h4 className="font-medium text-ocean-800">{t('location.everythingNearby.title')}</h4>
-                    <p className="text-apple-gray-600">{t('location.everythingNearby.description')}</p>
-                  </div>
-                </div>
-              </div>
+                </>
+              )}
             </div>
           </div>
 

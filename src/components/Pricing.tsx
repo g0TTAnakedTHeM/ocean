@@ -32,7 +32,7 @@ const Pricing = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Individual pricing card */}
           <div className="bg-white p-8 rounded-xl shadow-md fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
             <div className="text-center">
@@ -92,6 +92,47 @@ const Pricing = () => {
                 className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
               >
                 {t('pricing.double.button')}
+              </a>
+            </div>
+            
+            <div className="mt-8">
+              <h4 className="text-sm font-medium text-ocean-800 mb-4">{t('pricing.included.title')}</h4>
+              <ul className="space-y-3">
+                {includedFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="w-5 h-5 text-ocean-600 mt-0.5 flex-shrink-0" />
+                    <span className="ml-3 text-sm text-ocean-800">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          
+          {/* Limited Edition pricing card */}
+          <div className="bg-white p-8 rounded-xl shadow-md relative fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
+            <div className="absolute top-2 right-4 z-10">
+              <div className="flex items-center gap-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-lg">
+                <Star className="w-3.5 h-3.5 fill-white" />
+                <span>{t('pricing.limited.badge')}</span>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-2xl font-medium text-ocean-800 mb-2">{t('pricing.limited.title')}</h3>
+              <div className="mt-4 flex items-center justify-center">
+                <span className="text-2xl font-cormorant font-medium tracking-tight text-ocean-800">{t('pricing.limited.price')}</span>
+              </div>
+              <p className="mt-4 text-sm text-ocean-800">
+                {t('pricing.limited.description')}
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <a
+                href="#contact"
+                className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px]"
+              >
+                {t('pricing.limited.button')}
               </a>
             </div>
             
