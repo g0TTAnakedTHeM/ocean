@@ -41,10 +41,11 @@ const Pricing = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+        {/* Top row - 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* Individual pricing card */}
           <div className="bg-white p-6 rounded-xl shadow-md fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
-            <div className="text-center h-[140px]">
+            <div className="text-center">
               <h3 className="text-xl font-medium text-ocean-800 mb-2">{t('pricing.individual.title')}</h3>
               <div className="mt-3 flex items-center justify-center">
                 <span className="text-xl font-medium tracking-tight text-ocean-800">{t('pricing.individual.price')}</span>
@@ -54,7 +55,7 @@ const Pricing = () => {
               </p>
             </div>
             
-            <div className="mt-4">
+            <div className="mt-6">
               <a
                 href="#contact"
                 className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] text-sm font-medium"
@@ -85,7 +86,7 @@ const Pricing = () => {
               </div>
             </div>
             
-            <div className="text-center h-[130px]">
+            <div className="text-center">
               <h3 className="text-xl font-medium text-ocean-800 mb-2">{t('pricing.double.title')}</h3>
               <div className="mt-3 flex items-center justify-center">
                 <span className="text-xl font-medium tracking-tight text-ocean-800">{t('pricing.double.price')}</span>
@@ -95,7 +96,7 @@ const Pricing = () => {
               </p>
             </div>
             
-            <div className="mt-4">
+            <div className="mt-6">
               <a
                 href="#contact"
                 className="block w-full bg-[#a0ccdb] hover:bg-[#8ebfcf] text-white text-center py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] text-sm font-medium"
@@ -116,8 +117,10 @@ const Pricing = () => {
               </ul>
             </div>
           </div>
-          
-          {/* Body & Mind pricing card */}
+        </div>
+        
+        {/* Bottom row - Special course card (full width) */}
+        <div className="mt-6 max-w-4xl mx-auto">
           <div className="bg-white p-6 pt-8 rounded-xl shadow-md relative fade-in-section hover:translate-y-[-4px] transition-all duration-300 !border-0">
             <div className="absolute top-2 right-3 z-10">
               <div className="flex items-center gap-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-medium px-2 py-1 rounded-full shadow-lg">
@@ -126,9 +129,10 @@ const Pricing = () => {
               </div>
             </div>
             
-            <div className="text-center h-[130px]">
+            {/* Title, price, description - centered */}
+            <div className="text-center">
               <h3 className="text-xl font-medium text-ocean-800 mb-2">{t('pricing.limited.title')}</h3>
-              <div className="mt-3 flex items-center justify-center">
+              <div className="mt-3">
                 <span className="text-xl font-medium tracking-tight text-ocean-800">{t('pricing.limited.price')}</span>
               </div>
               <p className="mt-3 text-sm text-ocean-800">
@@ -136,7 +140,8 @@ const Pricing = () => {
               </p>
             </div>
             
-            <div className="mt-4">
+            {/* Button */}
+            <div className="mt-6 max-w-md mx-auto">
               <a
                 href="#contact"
                 className="block w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-center py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] text-sm font-medium"
@@ -146,7 +151,7 @@ const Pricing = () => {
             </div>
             
             {/* Collapsible Available dates */}
-            <div className="mt-4">
+            <div className="mt-4 max-w-md mx-auto">
               <button 
                 onClick={() => setDatesOpen(!datesOpen)}
                 className="w-full p-2 bg-amber-50 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-100 transition-colors"
@@ -167,28 +172,45 @@ const Pricing = () => {
               )}
             </div>
             
-            <div className="mt-4">
-              <h4 className="text-sm font-medium text-ocean-800 mb-2">{t('pricing.included.title')}</h4>
-              <ul className="space-y-1.5">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.pilates')}</span>
-                </li>
-                <li className="pl-6">
-                  <span className="text-[10px] text-amber-600 italic">{t('pricing.limited.features.pilatesGift')}</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.session')}</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.psychology')}</span>
-                </li>
-                <li className="pl-6">
-                  <span className="text-[10px] text-amber-600 italic">{t('pricing.limited.features.psychologyGift')}</span>
-                </li>
-              </ul>
+            {/* Features - 2 columns */}
+            <div className="mt-6 md:flex md:gap-8">
+              {/* Standard features */}
+              <div className="md:w-1/2">
+                <h4 className="text-sm font-medium text-ocean-800 mb-3">{t('pricing.included.title')}</h4>
+                <ul className="space-y-2">
+                  {includedFeatures.map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-4 h-4 text-ocean-600 mt-0.5 flex-shrink-0" />
+                      <span className="ml-2 text-xs text-ocean-800">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Special features */}
+              <div className="md:w-1/2 mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-amber-200 md:pl-6">
+                <h4 className="text-sm font-medium text-amber-700 mb-3">+ Special</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.pilates')}</span>
+                  </li>
+                  <li className="pl-6">
+                    <span className="text-[10px] text-amber-600 italic">{t('pricing.limited.features.pilatesGift')}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.session')}</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <span className="ml-2 text-xs text-ocean-800">{t('pricing.limited.features.psychology')}</span>
+                  </li>
+                  <li className="pl-6">
+                    <span className="text-[10px] text-amber-600 italic">{t('pricing.limited.features.psychologyGift')}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

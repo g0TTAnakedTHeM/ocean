@@ -281,8 +281,8 @@ const Contact = () => {
                           <option value="Португалия: 28 МАРТА - 4 АПРЕЛЯ">Португалия: 28 МАРТА - 4 АПРЕЛЯ</option>
                           <option value="Азоры: 11-18 АПРЕЛЯ">Азоры: 11-18 АПРЕЛЯ</option>
                           <option value="Португалия: 7-14 МАЯ">Португалия: 7-14 МАЯ</option>
-                          <option value="Франция: 29 МАЯ - 5 ИЮНЯ">Франция: 29 МАЯ - 5 ИЮНЯ</option>
-                          <option value="Франция: 3-10 СЕНТЯБРЯ">Франция: 3-10 СЕНТЯБРЯ</option>
+                          <option value="Франция: 6-13 ИЮНЯ">Франция: 6-13 ИЮНЯ</option>
+                          <option value="Франция: 7-14 СЕНТЯБРЯ">Франция: 7-14 СЕНТЯБРЯ</option>
                           <option value="Португалия: 25 СЕНТЯБРЯ - 2 ОКТЯБРЯ">Португалия: 25 СЕНТЯБРЯ - 2 ОКТЯБРЯ</option>
                           <option value="Португалия: 3-10 ОКТЯБРЯ">Португалия: 3-10 ОКТЯБРЯ</option>
                           <option value="Азоры: 7-14 НОЯБРЯ">Азоры: 7-14 НОЯБРЯ</option>
@@ -292,8 +292,8 @@ const Contact = () => {
                           <option value="Portugal: MARCH 28 - APRIL 4">Portugal: MARCH 28 - APRIL 4</option>
                           <option value="Azores: APRIL 11-18">Azores: APRIL 11-18</option>
                           <option value="Portugal: MAY 7-14">Portugal: MAY 7-14</option>
-                          <option value="France: MAY 29 - JUNE 5">France: MAY 29 - JUNE 5</option>
-                          <option value="France: SEPTEMBER 3-10">France: SEPTEMBER 3-10</option>
+                          <option value="France: JUNE 6-13">France: JUNE 6-13</option>
+                          <option value="France: SEPTEMBER 7-14">France: SEPTEMBER 7-14</option>
                           <option value="Portugal: SEPTEMBER 25 - OCTOBER 2">Portugal: SEPTEMBER 25 - OCTOBER 2</option>
                           <option value="Portugal: OCTOBER 3-10">Portugal: OCTOBER 3-10</option>
                           <option value="Azores: NOVEMBER 7-14">Azores: NOVEMBER 7-14</option>
@@ -303,8 +303,8 @@ const Contact = () => {
                           <option value="Португалія: 28 БЕРЕЗНЯ - 4 КВІТНЯ">Португалія: 28 БЕРЕЗНЯ - 4 КВІТНЯ</option>
                           <option value="Азори: 11-18 КВІТНЯ">Азори: 11-18 КВІТНЯ</option>
                           <option value="Португалія: 7-14 ТРАВНЯ">Португалія: 7-14 ТРАВНЯ</option>
-                          <option value="Франція: 29 ТРАВНЯ - 5 ЧЕРВНЯ">Франція: 29 ТРАВНЯ - 5 ЧЕРВНЯ</option>
-                          <option value="Франція: 3-10 ВЕРЕСНЯ">Франція: 3-10 ВЕРЕСНЯ</option>
+                          <option value="Франція: 6-13 ЧЕРВНЯ">Франція: 6-13 ЧЕРВНЯ</option>
+                          <option value="Франція: 7-14 ВЕРЕСНЯ">Франція: 7-14 ВЕРЕСНЯ</option>
                           <option value="Португалія: 25 ВЕРЕСНЯ - 2 ЖОВТНЯ">Португалія: 25 ВЕРЕСНЯ - 2 ЖОВТНЯ</option>
                           <option value="Португалія: 3-10 ЖОВТНЯ">Португалія: 3-10 ЖОВТНЯ</option>
                           <option value="Азори: 7-14 ЛИСТОПАДА">Азори: 7-14 ЛИСТОПАДА</option>

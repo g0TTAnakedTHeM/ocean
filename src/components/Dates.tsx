@@ -52,13 +52,13 @@ const Dates = () => {
     },
     {
       country: 'france' as const,
-      title: getDateTitle('29 ТРАВНЯ – 5 ЧЕРВНЯ', 'MAY 29 – JUNE 5'),
+      title: getDateTitle('6 – 13 ЧЕРВНЯ', 'JUNE 6 – 13'),
       availableSpots: 8,
       isLimited: true
     },
     {
       country: 'france' as const,
-      title: getDateTitle('3 – 10 ВЕРЕСНЯ', 'SEPTEMBER 3 – 10'),
+      title: getDateTitle('7 – 14 ВЕРЕСНЯ', 'SEPTEMBER 7 – 14'),
       availableSpots: 8,
       isLimited: false
     },
