@@ -9,10 +9,10 @@ const Pricing = () => {
   const [datesOpen, setDatesOpen] = useState(false);
   
   const limitedDates = language === 'ru' 
-    ? ['28 марта - 4 апреля (Португалия)', '29 мая - 5 июня (Франция)', '25 сентября - 2 октября (Португалия)', '7-14 ноября (Азоры)']
+    ? ['28 марта - 4 апреля (Португалия)', '6-13 июня (Франция)', '25 сентября - 2 октября (Португалия)', '7-14 ноября (Азоры)']
     : language === 'uk'
-    ? ['28 березня - 4 квітня (Португалія)', '29 травня - 5 червня (Франція)', '25 вересня - 2 жовтня (Португалія)', '7-14 листопада (Азори)']
-    : ['March 28 - April 4 (Portugal)', 'May 29 - June 5 (France)', 'September 25 - October 2 (Portugal)', 'November 7-14 (Azores)'];
+    ? ['28 березня - 4 квітня (Португалія)', '6-13 червня (Франція)', '25 вересня - 2 жовтня (Португалія)', '7-14 листопада (Азори)']
+    : ['March 28 - April 4 (Portugal)', 'June 6-13 (France)', 'September 25 - October 2 (Portugal)', 'November 7-14 (Azores)'];
   
   const includedFeatures = [
     t('pricing.included.accommodation'),
