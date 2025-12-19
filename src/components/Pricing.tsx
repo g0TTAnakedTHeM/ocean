@@ -1,16 +1,10 @@
-import { useState } from 'react';
-import { Check, Plus, ChevronDown } from 'lucide-react';
+import { Check, Plus } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Pricing = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
-  const [openCard, setOpenCard] = useState<number | null>(null);
-
-  const toggleCard = (index: number) => {
-    setOpenCard(openCard === index ? null : index);
-  };
 
   const getText = (uk: string, en: string, ru: string) => {
     if (language === 'uk') return uk;
@@ -199,44 +193,33 @@ const Pricing = () => {
                 </a>
               </div>
               
-              <button 
-                onClick={() => toggleCard(index)}
-                className={`w-full p-2 rounded-lg flex items-center justify-between cursor-pointer transition-colors ${
-                  pkg.isSpecial ? 'bg-amber-50 hover:bg-amber-100' : 'bg-ocean-50 hover:bg-ocean-100'
-                }`}
-              >
-                <span className={`text-xs font-medium ${pkg.isSpecial ? 'text-amber-800' : 'text-ocean-800'}`}>
+              <div className={`p-3 rounded-lg ${pkg.isSpecial ? 'bg-amber-50' : 'bg-ocean-50'}`}>
+                <h4 className={`text-xs font-medium mb-2 ${pkg.isSpecial ? 'text-amber-800' : 'text-ocean-800'}`}>
                   {getText('Що включено', "What's included", 'Что включено')}
-                </span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${openCard === index ? 'rotate-180' : ''} ${pkg.isSpecial ? 'text-amber-600' : 'text-ocean-600'}`} />
-              </button>
-              
-              {openCard === index && (
-                <div className="mt-3 space-y-2">
-                  <ul className="space-y-1.5">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <Check className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${pkg.isSpecial ? 'text-amber-500' : 'text-ocean-600'}`} />
-                        <span className="ml-2 text-[11px] text-ocean-800">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  {pkg.specialFeatures && (
-                    <div className="pt-3 mt-3 border-t border-amber-200">
-                      <h4 className="text-xs font-medium text-amber-700 mb-2">+ Grow New Body</h4>
-                      <ul className="space-y-1.5">
-                        {pkg.specialFeatures.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <Check className="w-3.5 h-3.5 text-amber-500 mt-0.5 flex-shrink-0" />
-                            <span className="ml-2 text-[11px] text-ocean-800">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )}
+                </h4>
+                <ul className="space-y-1.5">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <Check className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${pkg.isSpecial ? 'text-amber-500' : 'text-ocean-600'}`} />
+                      <span className="ml-2 text-[11px] text-ocean-800">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {pkg.specialFeatures && (
+                  <div className="pt-3 mt-3 border-t border-amber-200">
+                    <h4 className="text-xs font-medium text-amber-700 mb-2">+ Grow New Body</h4>
+                    <ul className="space-y-1.5">
+                      {pkg.specialFeatures.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <Check className="w-3.5 h-3.5 text-amber-500 mt-0.5 flex-shrink-0" />
+                          <span className="ml-2 text-[11px] text-ocean-800">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
