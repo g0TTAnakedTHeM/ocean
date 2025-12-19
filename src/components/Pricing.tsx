@@ -76,7 +76,7 @@ const Pricing = () => {
     },
     {
       id: 3,
-      location: getText('Осегор, Франція', 'Hossegor, France', 'Оссегор, Франция'),
+      location: getText('Осегор, Франція', 'Oséjour, France', 'Осежур, Франция'),
       individualPrice: '2750 €',
       doublePrice: '2150 € / 2150 €',
       dates: getText('6-13 червня • 7-14 вересня', 'June 6-13 • September 7-14', '6-13 июня • 7-14 сентября'),
