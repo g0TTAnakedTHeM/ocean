@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Star } from 'lucide-react';
+import { Calendar, Plus } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -108,8 +108,8 @@ const Dates = () => {
                 {date.isLimited && (
                   <div className="absolute top-2 right-2 z-10">
                     <div className="flex items-center gap-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-medium px-2 py-1 rounded-full shadow-lg">
-                      <Star className="w-2.5 h-2.5 fill-white" />
-                      <span>Special available</span>
+                      <Plus className="w-2.5 h-2.5" />
+                      <span>grow new body program</span>
                     </div>
                   </div>
                 )}
